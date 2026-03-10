@@ -1,0 +1,34 @@
+{
+  "current_list": "374837",
+  "criterias": [
+    {"value": "Fintech", "weight": 1, "field": "all", "type": "should"},
+    {"value": "APIs", "weight": 1, "field": "all", "type": "should"},
+    {"value": "Trading", "weight": 1, "field": "all", "type": "should"},
+    {"value": "Developers", "weight": 1, "field": "all", "type": "should"},
+    {"value": "real time", "weight": 1, "field": "all", "type": "should"},
+    {"value": "financial data", "weight": 1, "field": "all", "type": "should"},
+    {"value": "market data", "weight": 1, "field": "all", "type": "should"},
+    {"value": "stocks", "weight": 1, "field": "all", "type": "should"},
+    {"value": "crypto", "weight": 1, "field": "all", "type": "should"},
+    {"value": "options", "weight": 1, "field": "all", "type": "should"},
+    {"value": "trading", "weight": 1, "field": "influencer.hashtags", "type": "should"},
+    {"value": "investing", "weight": 1, "field": "influencer.hashtags", "type": "should"},
+    {"value": "finance", "weight": 1, "field": "influencer.hashtags", "type": "should"}
+  ],
+  "filters": [
+    {"value": {"from": 10000, "to": 200000}, "type": "range-int", "slug": "twitterFollowers", "name": "twitter.followers"},
+    {"value": {"from": 50000, "to": 500000}, "type": "range-int", "slug": "youtubeFollowers", "name": "youtube.followers"},
+    {"value": {"from": 20000, "to": 300000}, "type": "range-int", "slug": "instagramFollowers", "name": "instagram.followers"},
+    {"value": {"from": 50000, "to": 1000000}, "type": "range-int", "slug": "tiktokFollowers", "name": "tiktok.followers"},
+    {"value": ["en"], "type": "multi-string", "slug": "lg", "name": "influencer.lang"},
+    {"value": "3", "type": "float", "slug": "twitterEngagementRate", "name": "twitter.engagement_rate", "order": ">", "isPercent": true},
+    {"value": "3", "type": "float", "slug": "youtubeEngagementRate", "name": "youtube.engagement_rate", "order": ">", "isPercent": true},
+    {"value": "2", "type": "float", "slug": "instagramEngagementRate", "name": "instagram.engagement_rate", "order": ">", "isPercent": true}
+  ],
+  "audience_filters": [],
+  "social_media_matching_operator": "or",
+  "should_save": true,
+  "track_hits_results": 10000,
+  "score_model": "default",
+  "premade_search": null
+}

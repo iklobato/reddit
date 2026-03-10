@@ -1,0 +1,40 @@
+# LightAPI YAML configuration — declarative format
+# Run: DATABASE_URL=postgresql://postgres:postgres@localhost:5432/postgres uv run python run_lightapi_yaml.py
+
+database:
+  url: ${DATABASE_URL}
+
+defaults:
+  pagination:
+    style: page_number
+    page_size: 10
+
+endpoints:
+  - route: /catalog
+    fields:
+      name:
+        type: str
+        min_length: 1
+        max_length: 200
+      price:
+        type: float
+        ge: 0
+    meta:
+      methods: [GET, POST, PUT, PATCH, DELETE]
+      filtering:
+        ordering: [price, name]
+      pagination:
+        style: page_number
+        page_size: 5
+
+  - route: /announcements
+    fields:
+      title:
+        type: str
+        min_length: 1
+    meta:
+      methods: [GET, POST]
+      authentication:
+        permission: AllowAny
+      filtering:
+        ordering: [created_at]

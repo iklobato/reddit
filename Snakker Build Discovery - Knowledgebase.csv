@@ -1,0 +1,32 @@
+,,,,,,,,,,,
+,order,key,title,description,prompt,tags,snak_type,cue_types,element_types,media_types,timeframe
+,1,start_prompt,Start Prompt,Just an initial prompt,This is an start prompt,scientific,teaser,,,,
+,2,problem_statement,Problem Statement,Start with a compelling or provocative statement highlighting a clinical problem or knowledge gap.,Write this Snak component for a cientific Teaser. Start with a compelling or provocative statement that highlights a clinical problem or knowledge gap. Make it relevant and attention-grabbing for the target audience. Use a 'Statement Cue' or a 'Headline Cue' for this component.,scientific,teaser,"multiple_select_cue, multiple_choice_cue, generic_cue",form,video,5s
+,3,quiz,Quiz,"An interactive question focused on a key data point (e.g., disease prevalence).
+ Contains:
+
+
+One correct answer (accurate data).
+Two plausible, but incorrect answers.",Write this Snak component for a cientific Teaser. Write immediate feedback that explains why the selected answer is correct or incorrect. Reinforce the key message and educate the audience clearly and concisely. Use Multiple Choice Cue™ or Multiple Select Cue™,scientific,teaser,"multiple_choice_cue, ranking_cue, menu_cue",,static,10s
+,4,feedback,Feedback,Immediate explanation of correct/incorrect choices. Reinforces key message and educates audience.,"Write this Snak component for a cientific Teaser. Write a clear and concise call-to-action. Encourage the user to continue their journey—whether to view more content, book a meeting, or sign up for a newsletter.",scientific,teaser,"multiple_choice_cue, generic_cue",,video,5s
+,5,cta,Call to Action," Direct the participant to more content, external links, newsletter signup, or meeting scheduling.",Write this Snak component for a emotional Teaser. Start with a compelling or provocative statement that highlights a clinical problem or knowledge gap. Make it relevant and attention-grabbing for the target audience. Use a 'Statement Cue' or a 'Headline Cue' for this component.,scientific,teaser,multiple_choice_cue,,video,10s
+,6,end_prompt,End Prompt,Just an final prompt,This is an end prompt,scientific,teaser,,,,
+,1,problem_statement,Problem Statement,Start with a compelling or provocative statement highlighting a clinical problem or knowledge gap.,Write this Snak component for a emotional Teaser. Write immediate feedback that explains why the selected answer is correct or incorrect. Reinforce the key message and educate the audience clearly and concisely.,marketing,teaser,"multiple_select_cue, multiple_choice_cue, generic_cue",,,
+,2,quiz,Quiz,"An interactive question focused on a key data point (e.g., disease prevalence).
+ Contains:
+
+
+One correct answer (accurate data).
+Two plausible, but incorrect answers.","Write this Snak component for a emotional Teaser. Write a clear and concise call-to-action. Encourage the user to continue their journey—whether to view more content, book a meeting, or sign up for a newsletter.",marketing,teaser,"multiple_choice_cue, ranking_cue, menu_cue",,,
+,,feedback,Feedback,Immediate explanation of correct/incorrect choices. Reinforces key message and educates audience.,Write this Snak component for a educational Teaser. Start with a compelling or provocative statement that highlights a clinical problem or knowledge gap. Make it relevant and attention-grabbing for the target audience.,marketing,teaser,"multiple_choice_cue, generic_cue",,,
+,,cta,Call to Action," Direct the participant to more content, external links, newsletter signup, or meeting scheduling.",Write this Snak component for a educational Teaser. Write immediate feedback that explains why the selected answer is correct or incorrect. Reinforce the key message and educate the audience clearly and concisely.,marketing,teaser,multiple_choice_cue,,,
+,,problem_statement,Problem Statement,Start with a compelling or provocative statement highlighting a clinical problem or knowledge gap.,"Write this Snak component for a educational Teaser. Write a clear and concise call-to-action. Encourage the user to continue their journey—whether to view more content, book a meeting, or sign up for a newsletter.",educational,teaser,,,,
+,,quiz,Quiz,"An interactive question focused on a key data point (e.g., disease prevalence).
+ Contains:
+
+
+One correct answer (accurate data).
+Two plausible, but incorrect answers.",,educational,teaser,,,,
+,,feedback,Feedback,Immediate explanation of correct/incorrect choices. Reinforces key message and educates audience.,,educational,teaser,,,,
+,,cta,Call to Action," Direct the participant to more content, external links, newsletter signup, or meeting scheduling.",,educational,teaser,,,,
+,,introduction,Introduction,Quick introduction to the product/topic; typically invites to newsletter subscription.,,,trailer,,,,

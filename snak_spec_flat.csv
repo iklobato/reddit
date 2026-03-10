@@ -1,0 +1,2370 @@
+"Section Title","Object Name","Fields (Grouped)","JSON","Schema Description","Snak Type","Cue Type","How To Use"
+"1. Snak Object","snak","----------------, id, name, format, version, aspectRatio, previewUrl, playButtonUrl, autoPlay, controlbar, sessionTimeout, urls, themes, timelines","{
+  """"id"""": """"b3e1f2c0-1234-4a5b-8c2d-1a2b3c4d5e6f"""",
+  """"name"""": """"My Snak"""",
+  """"format"""": { """"version"""": 11 },
+  """"version"""": { """"id"""": """"a1b2c3d4-5678-90ab-cdef-1234567890ab"""", """"number"""": 3 },
+  """"aspectRatio"""": """"16:9"""",
+  """"previewUrl"""": """"https://example.com/preview.png"""",
+  """"playButtonUrl"""": null,
+  """"autoPlay"""": true,
+  """"controlbar"""": { """"show"""": true, ... },
+  """"sessionTimeout"""": 30000,
+  """"urls"""": { """"staticContent"""": """"https://cdn.example.com/"""", """"font"""": null, """"api"""": """"https://api.example.com/"""" },
+  """"themes"""": [""""dark"""", """"light""""],
+  """"timelines"""": [ ... ]
+}
+","snak.----------------   ----------------------
+snak.id   -
+snak.name   -
+snak.format   -
+snak.version   -
+snak.aspectRatio   String, e.g. '6:9'
+snak.previewUrl   -
+snak.playButtonUrl   -
+snak.autoPlay   true/false
+snak.controlbar   -
+snak.sessionTimeout   Milliseconds
+snak.urls   -
+snak.themes   -
+snak.timelines   -","","",""
+"2. snakFormat Object","snak","---------, version","{ """"version"""": 11 }
+","snak.---------   ----------------------
+snak.version   -","","",""
+"3. snakVersion Object","snakversion","--------, id, number","{ """"id"""": """"a1b2c3d4-5678-90ab-cdef-1234567890ab"""", """"number"""": 3 }
+","snakversion.--------   ----------------------
+snakversion.id   -
+snakversion.number   >= 1","","",""
+"4. controlbar Object","controlbar","------------, show, play, skip, previous, home, next, mute, fullscreen","{
+  """"show"""": true,
+  """"play"""": { """"show"""": true },
+  """"skip"""": { """"show"""": false },
+  """"previous"""": { """"show"""": true },
+  """"home"""": { """"show"""": true, """"timelineItemId"""": 1 },
+  """"next"""": { """"show"""": true },
+  """"mute"""": { """"show"""": false },
+  """"fullscreen"""": { """"show"""": true }
+}
+","controlbar.------------   ----------------------
+controlbar.show   true/false
+controlbar.play   { show: boolean }
+controlbar.skip   { show: boolean }
+controlbar.previous   { show: boolean }
+controlbar.home   { show: boolean, timelineItemId: int
+controlbar.next   { show: boolean }
+controlbar.mute   { show: boolean }
+controlbar.fullscreen   { show: boolean }","","",""
+"5. snakUrls Object","snakurls","---------------, staticContent, font, api","{
+  """"staticContent"""": """"https://cdn.example.com/static/"""",
+  """"font"""": null,
+  """"api"""": """"https://api.example.com/""""
+}
+","snakurls.---------------   ----------------------
+snakurls.staticContent   -
+snakurls.font   -
+snakurls.api   -","","",""
+"6. startBehaviour Format","startbehaviour","","""""startBehaviour"""": """"timer""""
+","","","",""
+"7. endBehaviour Format","endbehaviour","","""""endBehaviour"""": """"loop""""
+","","","",""
+"8. timeoutMessage Object","timeoutmessage","-------, show, text","{
+  """"show"""": true,
+  """"text"""": """"Time's up!""""
+}
+","timeoutmessage.-------   ----------------------
+timeoutmessage.show   true/false
+timeoutmessage.text   -","","",""
+"9. imageMedia Object","imagemedia","-------, id, type, url","{
+  """"id"""": null,
+  """"type"""": """"image_media"""",
+  """"url"""": """"https://cdn.example.com/img.png""""
+}
+","imagemedia.-------   ----------------------
+imagemedia.id   -
+imagemedia.type   'image_media'
+imagemedia.url   -","","",""
+"10. videoMedia Object","videomedia","------------------, id, type, width, height, url, previewUrl, previewFrameCount, previewFrameUrl","{
+  """"id"""": """"b3e1f2c0-1234-4a5b-8c2d-1a2b3c4d5e6f"""",
+  """"type"""": """"video_media"""",
+  """"width"""": 1920,
+  """"height"""": 1080,
+  """"url"""": """"https://cdn.example.com/video.mp4"""",
+  """"previewUrl"""": """"https://cdn.example.com/preview.jpg"""",
+  """"previewFrameCount"""": 10,
+  """"previewFrameUrl"""": """"https://cdn.example.com/frame.jpg""""
+}
+","videomedia.------------------   ----------------------
+videomedia.id   -
+videomedia.type   'video_media'
+videomedia.width   -
+videomedia.height   -
+videomedia.url   -
+videomedia.previewUrl   -
+videomedia.previewFrameCount   -
+videomedia.previewFrameUrl   -","","",""
+"11. soundMedia Object","soundmedia","-------------, id, type, url, waveformUrl","{
+  """"id"""": """"b3e1f2c0-1234-4a5b-8c2d-1a2b3c4d5e6f"""",
+  """"type"""": """"sound_media"""",
+  """"url"""": """"https://cdn.example.com/sound.mp3"""",
+  """"waveformUrl"""": """"https://cdn.example.com/waveform.png""""
+}
+","soundmedia.-------------   ----------------------
+soundmedia.id   -
+soundmedia.type   'sound_media'
+soundmedia.url   -
+soundmedia.waveformUrl   -","","",""
+"12. background Object","background","---------, color, image, video, x, y, width, height, repeat","{
+  """"color"""": """"#FFBBCC00"""",
+  """"image"""": null,
+  """"video"""": null,
+  """"x"""": """"50%"""",
+  """"y"""": """"auto"""",
+  """"width"""": """"100%"""",
+  """"height"""": """"100%"""",
+  """"repeat"""": true
+}
+","background.---------   ----------------------
+background.color   8-digit hex
+background.image   -
+background.video   (deprecated)
+background.x   percent/unit/auto
+background.y   percent/unit/auto
+background.width   -
+background.height   -
+background.repeat   true/false","","",""
+"13. border Object","border","-------, color, style, width, radius","{
+  """"color"""": """"#FFAABB00"""",
+  """"style"""": """"solid"""",
+  """"width"""": 2,
+  """"radius"""": 5
+}
+","border.-------   ----------------------
+border.color   8-digit hex
+border.style   none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset
+border.width   -
+border.radius   -","","",""
+"14. font Object","font","---------------, color, family, size, weight, style, textDecoration","{
+  """"color"""": """"#FFAABB00"""",
+  """"family"""": """"Arial"""",
+  """"size"""": 16,
+  """"weight"""": """"bold"""",
+  """"style"""": """"italic"""",
+  """"textDecoration"""": """"underline""""
+}
+","font.---------------   ----------------------
+font.color   8-digit hex
+font.family   -
+font.size   -
+font.weight   'bold' or integer
+font.style   normal, italic
+font.textDecoration   overline, line, underline, underline overline, none","","",""
+"15. action Object","action","-----------------, name, marker, url, openInNewTab, modalLayer","{
+  """"name"""": """"jump"""",
+  """"marker"""": {
+    """"timelineId"""": 1,
+    """"time"""": 5000,
+    """"trackIndex"""": 0,
+    """"linkedTimelineItemId"""": null
+  },
+  """"url"""": null,
+  """"openInNewTab"""": false,
+  """"modalLayer"""": null
+}
+","action.-----------------   ----------------------
+action.name   none, jump, auto, url, continue, back_to_menu, show_modal, booking
+action.marker   See below
+action.url   -
+action.openInNewTab   true/false
+action.modalLayer   -","","",""
+"16. animation Object","animation","---------------, start, loop","{
+  """"start"""": {
+    """"name"""": """"bounce"""",
+    """"duration"""": 1000,
+    """"iterationCount"""": 2,
+    """"direction"""": """"normal""""
+  },
+  """"loop"""": {
+    """"name"""": """"spin"""",
+    """"duration"""": 2000,
+    """"direction"""": """"reverse""""
+  }
+}
+","animation.---------------   ----------------------
+animation.start   See below
+animation.loop   See below","","",""
+"17. graphNodeElement Object","graphnodeelement","-----------------, id, type, position, content, font, border, background, action, animation","{
+  """"id"""": """"b3e1f2c0-1234-4a5b-8c2d-1a2b3c4d5e6f"""",
+  """"type"""": """"graph_node"""",
+  """"position"""": { """"x"""": 100, """"y"""": 100, """"width"""": 200, """"height"""": 100 },
+  """"content"""": """"Node A"""",
+  """"font"""": { """"color"""": """"#FF0000"""", """"family"""": """"Arial"""", """"size"""": 16, """"weight"""": """"bold"""", """"style"""": """"italic"""", """"textDecoration"""": """"underline"""" },
+  """"border"""": { """"color"""": """"#FFAABB00"""", """"style"""": """"solid"""", """"width"""": 2, """"radius"""": 5 },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"action"""": { """"name"""": """"jump"""", """"marker"""": { """"timelineId"""": 1, """"time"""": 5000, """"trackIndex"""": 0, """"linkedTimelineItemId"""": null }, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": null },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 1000, """"iterationCount"""": 2, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"spin"""", """"duration"""": 2000, """"direction"""": """"reverse"""" } }
+}
+","graphnodeelement.-----------------   ----------------------
+graphnodeelement.id   -
+graphnodeelement.type   'graph_node'
+graphnodeelement.position   See below
+graphnodeelement.content   -
+graphnodeelement.font   -
+graphnodeelement.border   -
+graphnodeelement.background   -
+graphnodeelement.action   -
+graphnodeelement.animation   -","","",""
+"18. ratingItem Object","ratingitem","-----------------, id, type, position, content, font, border, background, action, animation","{
+  """"id"""": """"b3e1f2c0-1234-4a5b-8c2d-1a2b3c4d5e6f"""",
+  """"type"""": """"rating"""",
+  """"position"""": { """"x"""": 100, """"y"""": 100, """"width"""": 200, """"height"""": 100 },
+  """"content"""": """"Rate Us"""",
+  """"font"""": { """"color"""": """"#FF0000"""", """"family"""": """"Arial"""", """"size"""": 16, """"weight"""": """"bold"""", """"style"""": """"italic"""", """"textDecoration"""": """"underline"""" },
+  """"border"""": { """"color"""": """"#FFAABB00"""", """"style"""": """"solid"""", """"width"""": 2, """"radius"""": 5 },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"action"""": { """"name"""": """"jump"""", """"marker"""": { """"timelineId"""": 1, """"time"""": 5000, """"trackIndex"""": 0, """"linkedTimelineItemId"""": null }, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": null },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 1000, """"iterationCount"""": 2, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"spin"""", """"duration"""": 2000, """"direction"""": """"reverse"""" } }
+}
+","ratingitem.-----------------   ----------------------
+ratingitem.id   -
+ratingitem.type   'rating'
+ratingitem.position   See below
+ratingitem.content   -
+ratingitem.font   -
+ratingitem.border   -
+ratingitem.background   -
+ratingitem.action   -
+ratingitem.animation   -","","",""
+"19. rankingItem Object","rankingitem","-----------------, id, type, position, content, font, border, background, action, animation","{
+  """"id"""": """"b3e1f2c0-1234-4a5b-8c2d-1a2b3c4d5e6f"""",
+  """"type"""": """"ranking"""",
+  """"position"""": { """"x"""": 100, """"y"""": 100, """"width"""": 200, """"height"""": 100 },
+  """"content"""": """"Ranking"""",
+  """"font"""": { """"color"""": """"#FF0000"""", """"family"""": """"Arial"""", """"size"""": 16, """"weight"""": """"bold"""", """"style"""": """"italic"""", """"textDecoration"""": """"underline"""" },
+  """"border"""": { """"color"""": """"#FFAABB00"""", """"style"""": """"solid"""", """"width"""": 2, """"radius"""": 5 },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"action"""": { """"name"""": """"jump"""", """"marker"""": { """"timelineId"""": 1, """"time"""": 5000, """"trackIndex"""": 0, """"linkedTimelineItemId"""": null }, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": null },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 1000, """"iterationCount"""": 2, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"spin"""", """"duration"""": 2000, """"direction"""": """"reverse"""" } }
+}
+","rankingitem.-----------------   ----------------------
+rankingitem.id   -
+rankingitem.type   'ranking'
+rankingitem.position   See below
+rankingitem.content   -
+rankingitem.font   -
+rankingitem.border   -
+rankingitem.background   -
+rankingitem.action   -
+rankingitem.animation   -","","",""
+"20. tag Object","tag","-----------------, id, type, position, content, font, border, background, action, animation","{
+  """"id"""": """"b3e1f2c0-1234-4a5b-8c2d-1a2b3c4d5e6f"""",
+  """"type"""": """"tag"""",
+  """"position"""": { """"x"""": 100, """"y"""": 100, """"width"""": 200, """"height"""": 100 },
+  """"content"""": """"Tag A"""",
+  """"font"""": { """"color"""": """"#FF0000"""", """"family"""": """"Arial"""", """"size"""": 16, """"weight"""": """"bold"""", """"style"""": """"italic"""", """"textDecoration"""": """"underline"""" },
+  """"border"""": { """"color"""": """"#FFAABB00"""", """"style"""": """"solid"""", """"width"""": 2, """"radius"""": 5 },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"action"""": { """"name"""": """"jump"""", """"marker"""": { """"timelineId"""": 1, """"time"""": 5000, """"trackIndex"""": 0, """"linkedTimelineItemId"""": null }, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": null },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 1000, """"iterationCount"""": 2, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"spin"""", """"duration"""": 2000, """"direction"""": """"reverse"""" } }
+}
+","tag.-----------------   ----------------------
+tag.id   -
+tag.type   'tag'
+tag.position   See below
+tag.content   -
+tag.font   -
+tag.border   -
+tag.background   -
+tag.action   -
+tag.animation   -","","",""
+"21. layer Object","layer","-----------------, id, type, position, content, font, border, background, action, animation","{
+  """"id"""": """"b3e1f2c0-1234-4a5b-8c2d-1a2b3c4d5e6f"""",
+  """"type"""": """"layer"""",
+  """"position"""": { """"x"""": 100, """"y"""": 100, """"width"""": 200, """"height"""": 100 },
+  """"content"""": """"Layer A"""",
+  """"font"""": { """"color"""": """"#FF0000"""", """"family"""": """"Arial"""", """"size"""": 16, """"weight"""": """"bold"""", """"style"""": """"italic"""", """"textDecoration"""": """"underline"""" },
+  """"border"""": { """"color"""": """"#FFAABB00"""", """"style"""": """"solid"""", """"width"""": 2, """"radius"""": 5 },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"action"""": { """"name"""": """"jump"""", """"marker"""": { """"timelineId"""": 1, """"time"""": 5000, """"trackIndex"""": 0, """"linkedTimelineItemId"""": null }, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": null },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 1000, """"iterationCount"""": 2, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"spin"""", """"duration"""": 2000, """"direction"""": """"reverse"""" } }
+}
+","layer.-----------------   ----------------------
+layer.id   -
+layer.type   'layer'
+layer.position   See below
+layer.content   -
+layer.font   -
+layer.border   -
+layer.background   -
+layer.action   -
+layer.animation   -","","",""
+"22. timeline Object","timeline","-----------------, id, type, position, content, font, border, background, action, animation","{
+  """"id"""": """"b3e1f2c0-1234-4a5b-8c2d-1a2b3c4d5e6f"""",
+  """"type"""": """"timeline"""",
+  """"position"""": { """"x"""": 100, """"y"""": 100, """"width"""": 200, """"height"""": 100 },
+  """"content"""": """"Timeline A"""",
+  """"font"""": { """"color"""": """"#FF0000"""", """"family"""": """"Arial"""", """"size"""": 16, """"weight"""": """"bold"""", """"style"""": """"italic"""", """"textDecoration"""": """"underline"""" },
+  """"border"""": { """"color"""": """"#FFAABB00"""", """"style"""": """"solid"""", """"width"""": 2, """"radius"""": 5 },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"action"""": { """"name"""": """"jump"""", """"marker"""": { """"timelineId"""": 1, """"time"""": 5000, """"trackIndex"""": 0, """"linkedTimelineItemId"""": null }, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": null },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 1000, """"iterationCount"""": 2, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"spin"""", """"duration"""": 2000, """"direction"""": """"reverse"""" } }
+}
+","timeline.-----------------   ----------------------
+timeline.id   -
+timeline.type   'timeline'
+timeline.position   See below
+timeline.content   -
+timeline.font   -
+timeline.border   -
+timeline.background   -
+timeline.action   -
+timeline.animation   -","","",""
+"23. timelineItem Object","timelineitem","-----------------, id, type, position, content, font, border, background, action, animation","{
+  """"id"""": """"b3e1f2c0-1234-4a5b-8c2d-1a2b3c4d5e6f"""",
+  """"type"""": """"timeline_item"""",
+  """"position"""": { """"x"""": 100, """"y"""": 100, """"width"""": 200, """"height"""": 100 },
+  """"content"""": """"Item A"""",
+  """"font"""": { """"color"""": """"#FF0000"""", """"family"""": """"Arial"""", """"size"""": 16, """"weight"""": """"bold"""", """"style"""": """"italic"""", """"textDecoration"""": """"underline"""" },
+  """"border"""": { """"color"""": """"#FFAABB00"""", """"style"""": """"solid"""", """"width"""": 2, """"radius"""": 5 },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"action"""": { """"name"""": """"jump"""", """"marker"""": { """"timelineId"""": 1, """"time"""": 5000, """"trackIndex"""": 0, """"linkedTimelineItemId"""": null }, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": null },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 1000, """"iterationCount"""": 2, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"spin"""", """"duration"""": 2000, """"direction"""": """"reverse"""" } }
+}
+","timelineitem.-----------------   ----------------------
+timelineitem.id   -
+timelineitem.type   'timeline_item'
+timelineitem.position   See below
+timelineitem.content   -
+timelineitem.font   -
+timelineitem.border   -
+timelineitem.background   -
+timelineitem.action   -
+timelineitem.animation   -","","",""
+"24. node Object","node","-----------------, id, type, position, content, font, border, background, action, animation","{
+  """"id"""": """"b3e1f2c0-1234-4a5b-8c2d-1a2b3c4d5e6f"""",
+  """"type"""": """"node"""",
+  """"position"""": { """"x"""": 100, """"y"""": 100, """"width"""": 200, """"height"""": 100 },
+  """"content"""": """"Node A"""",
+  """"font"""": { """"color"""": """"#FF0000"""", """"family"""": """"Arial"""", """"size"""": 16, """"weight"""": """"bold"""", """"style"""": """"italic"""", """"textDecoration"""": """"underline"""" },
+  """"border"""": { """"color"""": """"#FFAABB00"""", """"style"""": """"solid"""", """"width"""": 2, """"radius"""": 5 },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"action"""": { """"name"""": """"jump"""", """"marker"""": { """"timelineId"""": 1, """"time"""": 5000, """"trackIndex"""": 0, """"linkedTimelineItemId"""": null }, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": null },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 1000, """"iterationCount"""": 2, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"spin"""", """"duration"""": 2000, """"direction"""": """"reverse"""" } }
+}
+","node.-----------------   ----------------------
+node.id   -
+node.type   'node'
+node.position   See below
+node.content   -
+node.font   -
+node.border   -
+node.background   -
+node.action   -
+node.animation   -","","",""
+"25. theme Object","theme","-----------------, id, type, position, content, font, border, background, action, animation","{
+  """"id"""": """"b3e1f2c0-1234-4a5b-8c2d-1a2b3c4d5e6f"""",
+  """"type"""": """"theme"""",
+  """"position"""": { """"x"""": 100, """"y"""": 100, """"width"""": 200, """"height"""": 100 },
+  """"content"""": """"Theme A"""",
+  """"font"""": { """"color"""": """"#FF0000"""", """"family"""": """"Arial"""", """"size"""": 16, """"weight"""": """"bold"""", """"style"""": """"italic"""", """"textDecoration"""": """"underline"""" },
+  """"border"""": { """"color"""": """"#FFAABB00"""", """"style"""": """"solid"""", """"width"""": 2, """"radius"""": 5 },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"action"""": { """"name"""": """"jump"""", """"marker"""": { """"timelineId"""": 1, """"time"""": 5000, """"trackIndex"""": 0, """"linkedTimelineItemId"""": null }, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": null },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 1000, """"iterationCount"""": 2, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"spin"""", """"duration"""": 2000, """"direction"""": """"reverse"""" } }
+}
+","theme.-----------------   ----------------------
+theme.id   -
+theme.type   'theme'
+theme.position   See below
+theme.content   -
+theme.font   -
+theme.border   -
+theme.background   -
+theme.action   -
+theme.animation   -","","",""
+"26. color Object","color","-----------------, id, type, position, content, font, border, background, action, animation","{
+  """"id"""": """"b3e1f2c0-1234-4a5b-8c2d-1a2b3c4d5e6f"""",
+  """"type"""": """"color"""",
+  """"position"""": { """"x"""": 100, """"y"""": 100, """"width"""": 200, """"height"""": 100 },
+  """"content"""": """"Color A"""",
+  """"font"""": { """"color"""": """"#FF0000"""", """"family"""": """"Arial"""", """"size"""": 16, """"weight"""": """"bold"""", """"style"""": """"italic"""", """"textDecoration"""": """"underline"""" },
+  """"border"""": { """"color"""": """"#FFAABB00"""", """"style"""": """"solid"""", """"width"""": 2, """"radius"""": 5 },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"action"""": { """"name"""": """"jump"""", """"marker"""": { """"timelineId"""": 1, """"time"""": 5000, """"trackIndex"""": 0, """"linkedTimelineItemId"""": null }, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": null },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 1000, """"iterationCount"""": 2, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"spin"""", """"duration"""": 2000, """"direction"""": """"reverse"""" } }
+}
+","color.-----------------   ----------------------
+color.id   -
+color.type   'color'
+color.position   See below
+color.content   -
+color.font   -
+color.border   -
+color.background   -
+color.action   -
+color.animation   -","","",""
+"27. position Object","position","-------, x, y","{ """"x"""": 100, """"y"""": 100 }
+","position.-------   ----------------------
+position.x   -
+position.y   -","","",""
+"28. size Object","size","-------, width, height","{ """"width"""": 100, """"height"""": 100 }
+","size.-------   ----------------------
+size.width   -
+size.height   -","","",""
+"29. fontWeight Object","fontweight","-------, value","{ """"value"""": """"bold"""" }
+","fontweight.-------   ----------------------
+fontweight.value   'bold' or integer","","",""
+"30. fontStyle Object","fontstyle","-------, value","{ """"value"""": """"italic"""" }
+","fontstyle.-------   ----------------------
+fontstyle.value   normal, italic","","",""
+"31. textDecoration Object","textdecoration","-------, value","{ """"value"""": """"underline"""" }
+","textdecoration.-------   ----------------------
+textdecoration.value   overline, line, underline, underline overline, none","","",""
+"32. aspectRatio Object","aspectratio","-------, value","{ """"value"""": """"16:9"""" }
+","aspectratio.-------   ----------------------
+aspectratio.value   String, e.g. '6:9'","","",""
+"33. url Object","url","-------, value","{ """"value"""": """"https://example.com"""" }
+","url.-------   ----------------------
+url.value   -","","",""
+"34. boolean Object","boolean","-------, value","{ """"value"""": true }
+","boolean.-------   ----------------------
+boolean.value   true/false","","",""
+"35. integer Object","integer","-------, value","{ """"value"""": 100 }
+","integer.-------   ----------------------
+integer.value   -","","",""
+"36. uuid Object","uuid","-------, value","{ """"value"""": """"b3e1f2c0-1234-4a5b-8c2d-1a2b3c4d5e6f"""" }
+","uuid.-------   ----------------------
+uuid.value   -","","",""
+"37. string Object","string","-------, value","{ """"value"""": """"Hello"""" }
+","string.-------   ----------------------
+string.value   -","","",""
+"38. array Object","array","-------, value","{ """"value"""": [""""a"""", """"b""""] }
+","array.-------   ----------------------
+array.value   -","","",""
+"39. object Object","object","-------, value","{ """"value"""": { """"a"""": 1 } }
+","object.-------   ----------------------
+object.value   -","","",""
+"40. null Object","null","-------, value","{ """"value"""": null }
+","null.-------   ----------------------
+null.value   -","","",""
+"41. color Object","color","-----------------, id, type, position, content, font, border, background, action, animation","{
+  """"id"""": """"b3e1f2c0-1234-4a5b-8c2d-1a2b3c4d5e6f"""",
+  """"type"""": """"color"""",
+  """"position"""": { """"x"""": 100, """"y"""": 100, """"width"""": 200, """"height"""": 100 },
+  """"content"""": """"Color A"""",
+  """"font"""": { """"color"""": """"#FF0000"""", """"family"""": """"Arial"""", """"size"""": 16, """"weight"""": """"bold"""", """"style"""": """"italic"""", """"textDecoration"""": """"underline"""" },
+  """"border"""": { """"color"""": """"#FFAABB00"""", """"style"""": """"solid"""", """"width"""": 2, """"radius"""": 5 },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"action"""": { """"name"""": """"jump"""", """"marker"""": { """"timelineId"""": 1, """"time"""": 5000, """"trackIndex"""": 0, """"linkedTimelineItemId"""": null }, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": null },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 1000, """"iterationCount"""": 2, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"spin"""", """"duration"""": 2000, """"direction"""": """"reverse"""" } }
+}
+","color.-----------------   ----------------------
+color.id   -
+color.type   'color'
+color.position   See below
+color.content   -
+color.font   -
+color.border   -
+color.background   -
+color.action   -
+color.animation   -","","",""
+"42. position Object","position","-------, x, y","{ """"x"""": 100, """"y"""": 100 }
+","position.-------   ----------------------
+position.x   -
+position.y   -","","",""
+"43. size Object","size","-------, width, height","{ """"width"""": 100, """"height"""": 100 }
+","size.-------   ----------------------
+size.width   -
+size.height   -","","",""
+"44. fontWeight Object","fontweight","-------, value","{ """"value"""": """"bold"""" }
+","fontweight.-------   ----------------------
+fontweight.value   'bold' or integer","","",""
+"45. fontStyle Object","fontstyle","-------, value","{ """"value"""": """"italic"""" }
+","fontstyle.-------   ----------------------
+fontstyle.value   normal, italic","","",""
+"46. textDecoration Object","textdecoration","-------, value","{ """"value"""": """"underline"""" }
+","textdecoration.-------   ----------------------
+textdecoration.value   overline, line, underline, underline overline, none","","",""
+"47. aspectRatio Object","aspectratio","-------, value","{ """"value"""": """"16:9"""" }
+","aspectratio.-------   ----------------------
+aspectratio.value   String, e.g. '6:9'","","",""
+"48. url Object","url","-------, value","{ """"value"""": """"https://example.com"""" }
+","url.-------   ----------------------
+url.value   -","","",""
+"49. boolean Object","boolean","-------, value","{ """"value"""": true }
+","boolean.-------   ----------------------
+boolean.value   true/false","","",""
+"50. integer Object","integer","-------, value","{ """"value"""": 100 }
+","integer.-------   ----------------------
+integer.value   -","","",""
+"51. uuid Object","uuid","-------, value","{ """"value"""": """"b3e1f2c0-1234-4a5b-8c2d-1a2b3c4d5e6f"""" }
+","uuid.-------   ----------------------
+uuid.value   -","","",""
+"52. string Object","string","-------, value","{ """"value"""": """"Hello"""" }
+","string.-------   ----------------------
+string.value   -","","",""
+"53. array Object","array","-------, value","{ """"value"""": [""""a"""", """"b""""] }
+","array.-------   ----------------------
+array.value   -","","",""
+"54. object Object","object","-------, value","{ """"value"""": { """"a"""": 1 } }
+","object.-------   ----------------------
+object.value   -","","",""
+"55. null Object","null","-------, value","{ """"value"""": null }
+","null.-------   ----------------------
+null.value   -","","",""
+"23.1 Generic Cue Timeline Item (generic_tli)","1","-------, id, name, label, type, themePrefix, startTime, endTime, startBehaviour, endBehaviour, answerTime, timeoutMessage, background, showOverlay, tags, layers, nodes","{
+  """"id"""": 1,
+  """"name"""": """"Intro"""",
+  """"label"""": """"Introduction"""",
+  """"type"""": """"generic_tli"""",
+  """"themePrefix"""": """"default"""",
+  """"startTime"""": 0,
+  """"endTime"""": 10000,
+  """"startBehaviour"""": """"pause"""",
+  """"endBehaviour"""": """"continue"""",
+  """"answerTime"""": 5000,
+  """"timeoutMessage"""": { """"show"""": true, """"text"""": """"Time's up!"""" },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"showOverlay"""": true,
+  """"tags"""": [""""intro""""],
+  """"layers"""": [],
+  """"nodes"""": []
+}
+","1.-------   ----------------------
+1.id   -
+1.name   -
+1.label   -
+1.type   'generic_tli'
+1.themePrefix   -
+1.startTime   -
+1.endTime   -
+1.startBehaviour   pause, timer, continue, jump
+1.endBehaviour   pause, continue, loop
+1.answerTime   -
+1.timeoutMessage   -
+1.background   -
+1.showOverlay   -
+1.tags   -
+1.layers   -
+1.nodes   -","","",""
+"23.2 Menu Cue Timeline Item (menu_tli)","2","-------, id, name, label, type, themePrefix, startTime, endTime, startBehaviour, endBehaviour, answerTime, timeoutMessage, background, showOverlay, tags, showWheelOfFortune, layers, nodes","{
+  """"id"""": 2,
+  """"name"""": """"Menu"""",
+  """"label"""": """"Choose an option"""",
+  """"type"""": """"menu_tli"""",
+  """"themePrefix"""": """"default"""",
+  """"startTime"""": 10000,
+  """"endTime"""": 20000,
+  """"startBehaviour"""": """"pause"""",
+  """"endBehaviour"""": """"continue"""",
+  """"answerTime"""": 10000,
+  """"timeoutMessage"""": { """"show"""": true, """"text"""": """"Please choose!"""" },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"showOverlay"""": true,
+  """"tags"""": [""""menu""""],
+  """"showWheelOfFortune"""": false,
+  """"layers"""": [],
+  """"nodes"""": []
+}
+","2.-------   ----------------------
+2.id   -
+2.name   -
+2.label   -
+2.type   'menu_tli'
+2.themePrefix   -
+2.startTime   -
+2.endTime   -
+2.startBehaviour   pause, timer, continue, jump
+2.endBehaviour   pause, continue, loop
+2.answerTime   -
+2.timeoutMessage   -
+2.background   -
+2.showOverlay   -
+2.tags   -
+2.showWheelOfFortune   -
+2.layers   -
+2.nodes   -","","",""
+"23.3 Yes/No Cue Timeline Item (yesno_tli)","3","-------, id, name, label, type, themePrefix, startTime, endTime, startBehaviour, endBehaviour, answerTime, timeoutMessage, background, showOverlay, tags, feedbackType, showFeedback, showBreadcrumbs, showPercentages, layers, nodes","{
+  """"id"""": 3,
+  """"name"""": """"Yes/No Question"""",
+  """"label"""": """"Do you agree?"""",
+  """"type"""": """"yesno_tli"""",
+  """"themePrefix"""": """"default"""",
+  """"startTime"""": 20000,
+  """"endTime"""": 30000,
+  """"startBehaviour"""": """"timer"""",
+  """"endBehaviour"""": """"pause"""",
+  """"answerTime"""": 8000,
+  """"timeoutMessage"""": { """"show"""": true, """"text"""": """"Please answer!"""" },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"showOverlay"""": false,
+  """"tags"""": [""""yesno""""],
+  """"feedbackType"""": """"quiz"""",
+  """"showFeedback"""": true,
+  """"showBreadcrumbs"""": true,
+  """"showPercentages"""": false,
+  """"layers"""": [],
+  """"nodes"""": []
+}
+","3.-------   ----------------------
+3.id   -
+3.name   -
+3.label   -
+3.type   'yesno_tli'
+3.themePrefix   -
+3.startTime   -
+3.endTime   -
+3.startBehaviour   pause, timer, continue, jump
+3.endBehaviour   pause, continue, loop
+3.answerTime   -
+3.timeoutMessage   -
+3.background   -
+3.showOverlay   -
+3.tags   -
+3.feedbackType   quiz, poll
+3.showFeedback   -
+3.showBreadcrumbs   -
+3.showPercentages   -
+3.layers   -
+3.nodes   -","","",""
+"23.4 Multiple Choice Cue Timeline Item (multiple_choice_tli)","4","-------, id, name, label, type, themePrefix, startTime, endTime, startBehaviour, endBehaviour, answerTime, timeoutMessage, background, showOverlay, tags, feedbackType, showFeedback, showBreadcrumbs, showPercentages, layers, nodes","{
+  """"id"""": 4,
+  """"name"""": """"Multiple Choice Question"""",
+  """"label"""": """"Select the correct answer:"""",
+  """"type"""": """"multiple_choice_tli"""",
+  """"themePrefix"""": """"default"""",
+  """"startTime"""": 30000,
+  """"endTime"""": 40000,
+  """"startBehaviour"""": """"timer"""",
+  """"endBehaviour"""": """"pause"""",
+  """"answerTime"""": 10000,
+  """"timeoutMessage"""": { """"show"""": true, """"text"""": """"Please answer!"""" },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"showOverlay"""": true,
+  """"tags"""": [""""mcq""""],
+  """"feedbackType"""": """"quiz"""",
+  """"showFeedback"""": true,
+  """"showBreadcrumbs"""": false,
+  """"showPercentages"""": true,
+  """"layers"""": [],
+  """"nodes"""": []
+}
+","4.-------   ----------------------
+4.id   -
+4.name   -
+4.label   -
+4.type   'multiple_choice_tli'
+4.themePrefix   -
+4.startTime   -
+4.endTime   -
+4.startBehaviour   pause, timer, continue, jump
+4.endBehaviour   pause, continue, loop
+4.answerTime   -
+4.timeoutMessage   -
+4.background   -
+4.showOverlay   -
+4.tags   -
+4.feedbackType   quiz, poll
+4.showFeedback   -
+4.showBreadcrumbs   -
+4.showPercentages   -
+4.layers   -
+4.nodes   -","","",""
+"23.5 Multiple Select Cue Timeline Item (multiple_select_tli)","5","-------, id, name, label, type, themePrefix, startTime, endTime, startBehaviour, endBehaviour, answerTime, timeoutMessage, background, showOverlay, tags, feedbackType, showFeedback, showBreadcrumbs, showPercentages, feedbackPollMessage, feedbackCorrectMessage, feedbackIncorrectMessage, maxAnswers, minAnswers, showCheckboxes, layers, nodes","{
+  """"id"""": 5,
+  """"name"""": """"Select All That Apply"""",
+  """"label"""": """"Choose all correct answers:"""",
+  """"type"""": """"multiple_select_tli"""",
+  """"themePrefix"""": """"default"""",
+  """"startTime"""": 40000,
+  """"endTime"""": 50000,
+  """"startBehaviour"""": """"timer"""",
+  """"endBehaviour"""": """"pause"""",
+  """"answerTime"""": 12000,
+  """"timeoutMessage"""": { """"show"""": true, """"text"""": """"Please answer!"""" },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"showOverlay"""": true,
+  """"tags"""": [""""msq""""],
+  """"feedbackType"""": """"poll"""",
+  """"showFeedback"""": true,
+  """"showBreadcrumbs"""": false,
+  """"showPercentages"""": true,
+  """"feedbackPollMessage"""": """"Most people chose option B."""",
+  """"feedbackCorrectMessage"""": """"Correct!"""",
+  """"feedbackIncorrectMessage"""": """"Try again!"""",
+  """"maxAnswers"""": 3,
+  """"minAnswers"""": 1,
+  """"showCheckboxes"""": true,
+  """"layers"""": [],
+  """"nodes"""": []
+}
+","5.-------   ----------------------
+5.id   -
+5.name   -
+5.label   -
+5.type   'multiple_select_tli'
+5.themePrefix   -
+5.startTime   -
+5.endTime   -
+5.startBehaviour   pause, timer, continue, jump
+5.endBehaviour   pause, continue, loop
+5.answerTime   -
+5.timeoutMessage   -
+5.background   -
+5.showOverlay   -
+5.tags   -
+5.feedbackType   quiz, poll
+5.showFeedback   -
+5.showBreadcrumbs   -
+5.showPercentages   -
+5.feedbackPollMessage   -
+5.feedbackCorrectMessage   -
+5.feedbackIncorrectMessage   -
+5.maxAnswers   -
+5.minAnswers   -
+5.showCheckboxes   -
+5.layers   -
+5.nodes   -","","",""
+"23.6 Audience Select Cue Timeline Item (audience_select_tli)","6","-------, id, name, label, type, themePrefix, startTime, endTime, startBehaviour, endBehaviour, answerTime, timeoutMessage, background, showOverlay, tags, layers, nodes","{
+  """"id"""": 6,
+  """"name"""": """"Audience Select"""",
+  """"label"""": """"Select your group:"""",
+  """"type"""": """"audience_select_tli"""",
+  """"themePrefix"""": """"default"""",
+  """"startTime"""": 50000,
+  """"endTime"""": 60000,
+  """"startBehaviour"""": """"pause"""",
+  """"endBehaviour"""": """"continue"""",
+  """"answerTime"""": 15000,
+  """"timeoutMessage"""": { """"show"""": true, """"text"""": """"Please select!"""" },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"showOverlay"""": true,
+  """"tags"""": [""""audience""""],
+  """"layers"""": [],
+  """"nodes"""": []
+}
+","6.-------   ----------------------
+6.id   -
+6.name   -
+6.label   -
+6.type   'audience_select_tli'
+6.themePrefix   -
+6.startTime   -
+6.endTime   -
+6.startBehaviour   pause, timer, continue, jump
+6.endBehaviour   pause, continue, loop
+6.answerTime   -
+6.timeoutMessage   -
+6.background   -
+6.showOverlay   -
+6.tags   -
+6.layers   -
+6.nodes   -","","",""
+"23.7 Rating Cue Timeline Item (rating_tli)","7","-------, id, name, label, type, themePrefix, startTime, endTime, startBehaviour, endBehaviour, answerTime, timeoutMessage, background, showOverlay, tags, showFeedback, showBreadcrumbs, showPercentages, feedbackMessage, layers, nodes","{
+  """"id"""": 7,
+  """"name"""": """"Rate Your Experience"""",
+  """"label"""": """"How would you rate this?"""",
+  """"type"""": """"rating_tli"""",
+  """"themePrefix"""": """"default"""",
+  """"startTime"""": 60000,
+  """"endTime"""": 70000,
+  """"startBehaviour"""": """"pause"""",
+  """"endBehaviour"""": """"continue"""",
+  """"answerTime"""": 10000,
+  """"timeoutMessage"""": { """"show"""": true, """"text"""": """"Please rate!"""" },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"showOverlay"""": true,
+  """"tags"""": [""""rating""""],
+  """"showFeedback"""": true,
+  """"showBreadcrumbs"""": false,
+  """"showPercentages"""": true,
+  """"feedbackMessage"""": """"Thank you for your feedback!"""",
+  """"layers"""": [],
+  """"nodes"""": []
+}
+","7.-------   ----------------------
+7.id   -
+7.name   -
+7.label   -
+7.type   'rating_tli'
+7.themePrefix   -
+7.startTime   -
+7.endTime   -
+7.startBehaviour   pause, timer, continue, jump
+7.endBehaviour   pause, continue, loop
+7.answerTime   -
+7.timeoutMessage   -
+7.background   -
+7.showOverlay   -
+7.tags   -
+7.showFeedback   -
+7.showBreadcrumbs   -
+7.showPercentages   -
+7.feedbackMessage   -
+7.layers   -
+7.nodes   -","","",""
+"23.8 Ranking Cue Timeline Item (ranking_tli)","8","-------, id, name, label, type, themePrefix, startTime, endTime, startBehaviour, endBehaviour, answerTime, timeoutMessage, background, showOverlay, tags, feedbackType, showFeedback, shuffleEnabled, showBreadcrumbs, showPercentages, feedbackPollMessage, feedbackCorrectMessage, feedbackIncorrectMessage, layers, nodes","{
+  """"id"""": 8,
+  """"name"""": """"Rank the Options"""",
+  """"label"""": """"Order these from best to worst:"""",
+  """"type"""": """"ranking_tli"""",
+  """"themePrefix"""": """"default"""",
+  """"startTime"""": 70000,
+  """"endTime"""": 80000,
+  """"startBehaviour"""": """"timer"""",
+  """"endBehaviour"""": """"pause"""",
+  """"answerTime"""": 15000,
+  """"timeoutMessage"""": { """"show"""": true, """"text"""": """"Please rank!"""" },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"showOverlay"""": true,
+  """"tags"""": [""""ranking""""],
+  """"feedbackType"""": """"quiz"""",
+  """"showFeedback"""": true,
+  """"shuffleEnabled"""": true,
+  """"showBreadcrumbs"""": false,
+  """"showPercentages"""": true,
+  """"feedbackPollMessage"""": """"Most people ranked option A first."""",
+  """"feedbackCorrectMessage"""": """"Perfect order!"""",
+  """"feedbackIncorrectMessage"""": """"Try again!"""",
+  """"layers"""": [],
+  """"nodes"""": []
+}
+","8.-------   ----------------------
+8.id   -
+8.name   -
+8.label   -
+8.type   'ranking_tli'
+8.themePrefix   -
+8.startTime   -
+8.endTime   -
+8.startBehaviour   pause, timer, continue, jump
+8.endBehaviour   pause, continue, loop
+8.answerTime   -
+8.timeoutMessage   -
+8.background   -
+8.showOverlay   -
+8.tags   -
+8.feedbackType   quiz, poll
+8.showFeedback   -
+8.shuffleEnabled   -
+8.showBreadcrumbs   -
+8.showPercentages   -
+8.feedbackPollMessage   -
+8.feedbackCorrectMessage   -
+8.feedbackIncorrectMessage   -
+8.layers   -
+8.nodes   -","","",""
+"23.9 Image Timeline Item (image_tli)","9","-------, id, name, label, type, themePrefix, startTime, endTime, startBehaviour, endBehaviour, answerTime, timeoutMessage, background, showOverlay, tags, image, image.x, image.y, image.width, image.height, image.source, layers, nodes","{
+  """"id"""": 9,
+  """"name"""": """"Show Image"""",
+  """"label"""": """"Look at this image:"""",
+  """"type"""": """"image_tli"""",
+  """"themePrefix"""": """"default"""",
+  """"startTime"""": 80000,
+  """"endTime"""": 90000,
+  """"startBehaviour"""": """"pause"""",
+  """"endBehaviour"""": """"continue"""",
+  """"answerTime"""": 0,
+  """"timeoutMessage"""": { """"show"""": false, """"text"""": """""""" },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"showOverlay"""": false,
+  """"tags"""": [""""image""""],
+  """"image"""": {
+    """"x"""": """"10%"""",
+    """"y"""": """"10%"""",
+    """"width"""": """"80%"""",
+    """"height"""": """"80%"""",
+    """"source"""": {
+      """"id"""": null,
+      """"type"""": """"image_media"""",
+      """"url"""": """"https://cdn.example.com/img.png""""
+    }
+  },
+  """"layers"""": [],
+  """"nodes"""": []
+}
+","9.-------   ----------------------
+9.id   -
+9.name   -
+9.label   -
+9.type   'image_tli'
+9.themePrefix   -
+9.startTime   -
+9.endTime   -
+9.startBehaviour   pause, timer, continue, jump
+9.endBehaviour   pause, continue, loop
+9.answerTime   -
+9.timeoutMessage   -
+9.background   -
+9.showOverlay   -
+9.tags   -
+9.image   -
+9.image.x   -
+9.image.y   -
+9.image.width   -
+9.image.height   -
+9.image.source   -
+9.layers   -
+9.nodes   -","","",""
+"23.10 Video Timeline Item (video_tli)","10","-------, id, name, label, type, themePrefix, startTime, endTime, startBehaviour, endBehaviour, answerTime, timeoutMessage, background, showOverlay, tags, video, video.x, video.y, video.width, video.height, video.timeOffset, video.soundEnabled, video.baseVolume, video.source, layers, nodes","{
+  """"id"""": 10,
+  """"name"""": """"Show Video"""",
+  """"label"""": """"Watch this video:"""",
+  """"type"""": """"video_tli"""",
+  """"themePrefix"""": """"default"""",
+  """"startTime"""": 90000,
+  """"endTime"""": 100000,
+  """"startBehaviour"""": """"pause"""",
+  """"endBehaviour"""": """"continue"""",
+  """"answerTime"""": 0,
+  """"timeoutMessage"""": { """"show"""": false, """"text"""": """""""" },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"showOverlay"""": false,
+  """"tags"""": [""""video""""],
+  """"video"""": {
+    """"x"""": """"10%"""",
+    """"y"""": """"10%"""",
+    """"width"""": """"80%"""",
+    """"height"""": """"80%"""",
+    """"timeOffset"""": 0,
+    """"soundEnabled"""": true,
+    """"baseVolume"""": 100,
+    """"source"""": {
+      """"id"""": null,
+      """"type"""": """"video_media"""",
+      """"url"""": """"https://cdn.example.com/video.mp4"""",
+      """"width"""": 1920,
+      """"height"""": 1080,
+      """"previewUrl"""": """"https://cdn.example.com/preview.jpg"""",
+      """"previewFrameCount"""": 10,
+      """"previewFrameUrl"""": """"https://cdn.example.com/frame.jpg""""
+    }
+  },
+  """"layers"""": [],
+  """"nodes"""": []
+}
+","10.-------   ----------------------
+10.id   -
+10.name   -
+10.label   -
+10.type   'video_tli'
+10.themePrefix   -
+10.startTime   -
+10.endTime   -
+10.startBehaviour   pause, timer, continue, jump
+10.endBehaviour   pause, continue, loop
+10.answerTime   -
+10.timeoutMessage   -
+10.background   -
+10.showOverlay   -
+10.tags   -
+10.video   -
+10.video.x   -
+10.video.y   -
+10.video.width   -
+10.video.height   -
+10.video.timeOffset   -
+10.video.soundEnabled   -
+10.video.baseVolume   -
+10.video.source   -
+10.layers   -
+10.nodes   -","","",""
+"23.11 Sound Timeline Item (sound_tli)","11","-------, id, name, label, type, themePrefix, startTime, endTime, startBehaviour, endBehaviour, answerTime, timeoutMessage, background, showOverlay, tags, sound, sound.x, sound.y, sound.width, sound.height, sound.source, layers, nodes","{
+  """"id"""": 11,
+  """"name"""": """"Play Sound"""",
+  """"label"""": """"Listen to this sound:"""",
+  """"type"""": """"sound_tli"""",
+  """"themePrefix"""": """"default"""",
+  """"startTime"""": 100000,
+  """"endTime"""": 110000,
+  """"startBehaviour"""": """"pause"""",
+  """"endBehaviour"""": """"continue"""",
+  """"answerTime"""": 0,
+  """"timeoutMessage"""": { """"show"""": false, """"text"""": """""""" },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"showOverlay"""": false,
+  """"tags"""": [""""sound""""],
+  """"sound"""": {
+    """"x"""": """"10%"""",
+    """"y"""": """"10%"""",
+    """"width"""": """"80%"""",
+    """"height"""": """"80%"""",
+    """"source"""": {
+      """"id"""": null,
+      """"type"""": """"sound_media"""",
+      """"url"""": """"https://cdn.example.com/sound.mp3"""",
+      """"waveformUrl"""": """"https://cdn.example.com/waveform.png""""
+    }
+  },
+  """"layers"""": [],
+  """"nodes"""": []
+}
+","11.-------   ----------------------
+11.id   -
+11.name   -
+11.label   -
+11.type   'sound_tli'
+11.themePrefix   -
+11.startTime   -
+11.endTime   -
+11.startBehaviour   pause, timer, continue, jump
+11.endBehaviour   pause, continue, loop
+11.answerTime   -
+11.timeoutMessage   -
+11.background   -
+11.showOverlay   -
+11.tags   -
+11.sound   -
+11.sound.x   -
+11.sound.y   -
+11.sound.width   -
+11.sound.height   -
+11.sound.source   -
+11.layers   -
+11.nodes   -","","",""
+"23.12 Goto Timeline Item (goto_tli)","12","-------, id, name, label, type, themePrefix, startTime, endTime, startBehaviour, endBehaviour, answerTime, timeoutMessage, background, showOverlay, tags, marker, marker.timelineId, marker.time, marker.trackIndex, marker.linkedTimelineItemId, layers, nodes","{
+  """"id"""": 12,
+  """"name"""": """"Go To Marker"""",
+  """"label"""": """"Jump to another point:"""",
+  """"type"""": """"goto_tli"""",
+  """"themePrefix"""": """"default"""",
+  """"startTime"""": 110000,
+  """"endTime"""": 120000,
+  """"startBehaviour"""": """"jump"""",
+  """"endBehaviour"""": """"pause"""",
+  """"answerTime"""": 0,
+  """"timeoutMessage"""": { """"show"""": false, """"text"""": """""""" },
+  """"background"""": { """"color"""": """"#FFBBCC00"""", """"image"""": null, """"video"""": null, """"x"""": """"50%"""", """"y"""": """"auto"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": true },
+  """"showOverlay"""": false,
+  """"tags"""": [""""goto""""],
+  """"marker"""": {
+    """"timelineId"""": 2,
+    """"time"""": 5000,
+    """"trackIndex"""": 1,
+    """"linkedTimelineItemId"""": 5
+  },
+  """"layers"""": [],
+  """"nodes"""": []
+}
+","12.-------   ----------------------
+12.id   -
+12.name   -
+12.label   -
+12.type   'goto_tli'
+12.themePrefix   -
+12.startTime   -
+12.endTime   -
+12.startBehaviour   pause, timer, continue, jump
+12.endBehaviour   pause, continue, loop
+12.answerTime   -
+12.timeoutMessage   -
+12.background   -
+12.showOverlay   -
+12.tags   -
+12.marker   -
+12.marker.timelineId   -
+12.marker.time   -
+12.marker.trackIndex   -
+12.marker.linkedTimelineItemId   -
+12.layers   -
+12.nodes   -","","",""
+"24.1 Title Node (title_node)","1","-------, id, name, type, themePrefix, content, contentAlign, value, x, y, width, height, hoverStyle, selectedStyle, action, animation, isMovable, isSizeable, isDeletable, isDuplicatable, isEditable, isRequired, allowActionChange, isHidden, isSelectable, isMuted, showFeedback, feedbackMessage, aspectRatio, shape, audienceId, layer","{
+  """"id"""": 101,
+  """"name"""": """"Title"""",
+  """"type"""": """"title_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"Welcome to the Experience!"""",
+  """"contentAlign"""": """"center center"""",
+  """"value"""": null,
+  """"x"""": """"10%"""",
+  """"y"""": """"5%"""",
+  """"width"""": """"80%"""",
+  """"height"""": """"10%"""",
+  """"hoverStyle"""": {""""background"""": {""""color"""": """"#EEEEEEFF""""}},
+  """"selectedStyle"""": {""""background"""": {""""color"""": """"#CCCCCCFF""""}},
+  """"action"""": {""""name"""": """"none""""},
+  """"animation"""": {""""start"""": {""""name"""": """"bounce"""", """"duration"""": 1000, """"iterationCount"""": 1, """"direction"""": """"normal""""}, """"loop"""": {""""name"""": """"none"""", """"duration"""": 0, """"direction"""": """"normal""""}},
+  """"isMovable"""": true,
+  """"isSizeable"""": true,
+  """"isDeletable"""": true,
+  """"isDuplicatable"""": true,
+  """"isEditable"""": true,
+  """"isRequired"""": false,
+  """"allowActionChange"""": true,
+  """"isHidden"""": false,
+  """"isSelectable"""": true,
+  """"isMuted"""": false,
+  """"showFeedback"""": false,
+  """"feedbackMessage"""": null,
+  """"aspectRatio"""": null,
+  """"shape"""": """"rectangle"""",
+  """"audienceId"""": null,
+  """"layer"""": 0
+}
+","1.-------   ----------------------
+1.id   -
+1.name   -
+1.type   'title_node'
+1.themePrefix   -
+1.content   -
+1.contentAlign   top left, top center, top right, top justify, center left, center center, center right, center justify, bottom left, bottom center, bottom right, bottom justify
+1.value   -
+1.x   -
+1.y   -
+1.width   -
+1.height   -
+1.hoverStyle   -
+1.selectedStyle   -
+1.action   -
+1.animation   -
+1.isMovable   -
+1.isSizeable   -
+1.isDeletable   -
+1.isDuplicatable   -
+1.isEditable   -
+1.isRequired   -
+1.allowActionChange   -
+1.isHidden   -
+1.isSelectable   -
+1.isMuted   -
+1.showFeedback   -
+1.feedbackMessage   -
+1.aspectRatio   -
+1.shape   rectangle, square, circle, ellipse
+1.audienceId   -
+1.layer   -","","",""
+"24.2 Label Node (label_node)","2","-------, id, name, type, themePrefix, content, contentAlign, value, x, y, width, height, hoverStyle, selectedStyle, action, animation, isMovable, isSizeable, isDeletable, isDuplicatable, isEditable, isRequired, allowActionChange, isHidden, isSelectable, isMuted, showFeedback, feedbackMessage, aspectRatio, shape, audienceId, layer","{
+  """"id"""": 102,
+  """"name"""": """"Label"""",
+  """"type"""": """"label_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"This is a label node."""",
+  """"contentAlign"""": """"center center"""",
+  """"value"""": null,
+  """"x"""": """"10%"""",
+  """"y"""": """"20%"""",
+  """"width"""": """"80%"""",
+  """"height"""": """"10%"""",
+  """"hoverStyle"""": {""""background"""": {""""color"""": """"#EEEEEEFF""""}},
+  """"selectedStyle"""": {""""background"""": {""""color"""": """"#CCCCCCFF""""}},
+  """"action"""": {""""name"""": """"none""""},
+  """"animation"""": {""""start"""": {""""name"""": """"bounce"""", """"duration"""": 1000, """"iterationCount"""": 1, """"direction"""": """"normal""""}, """"loop"""": {""""name"""": """"none"""", """"duration"""": 0, """"direction"""": """"normal""""}},
+  """"isMovable"""": true,
+  """"isSizeable"""": true,
+  """"isDeletable"""": true,
+  """"isDuplicatable"""": true,
+  """"isEditable"""": true,
+  """"isRequired"""": false,
+  """"allowActionChange"""": true,
+  """"isHidden"""": false,
+  """"isSelectable"""": true,
+  """"isMuted"""": false,
+  """"showFeedback"""": false,
+  """"feedbackMessage"""": null,
+  """"aspectRatio"""": null,
+  """"shape"""": """"rectangle"""",
+  """"audienceId"""": null,
+  """"layer"""": 0
+}
+","2.-------   ----------------------
+2.id   -
+2.name   -
+2.type   'label_node'
+2.themePrefix   -
+2.content   -
+2.contentAlign   top left, top center, top right, top justify, center left, center center, center right, center justify, bottom left, bottom center, bottom right, bottom justify
+2.value   -
+2.x   -
+2.y   -
+2.width   -
+2.height   -
+2.hoverStyle   -
+2.selectedStyle   -
+2.action   -
+2.animation   -
+2.isMovable   -
+2.isSizeable   -
+2.isDeletable   -
+2.isDuplicatable   -
+2.isEditable   -
+2.isRequired   -
+2.allowActionChange   -
+2.isHidden   -
+2.isSelectable   -
+2.isMuted   -
+2.showFeedback   -
+2.feedbackMessage   -
+2.aspectRatio   -
+2.shape   rectangle, square, circle, ellipse
+2.audienceId   -
+2.layer   -","","",""
+"24.3 Answer Timer Node (answer_timer_node)","3","-------, id, name, type, themePrefix, content, contentAlign, value, x, y, width, height, hoverStyle, selectedStyle, action, animation, isMovable, isSizeable, isDeletable, isDuplicatable, isEditable, isRequired, allowActionChange, isHidden, isSelectable, isMuted, showFeedback, feedbackMessage, aspectRatio, shape, audienceId, layer","{
+  """"id"""": 103,
+  """"name"""": """"Answer Timer"""",
+  """"type"""": """"answer_timer_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"Time left: 10s"""",
+  """"contentAlign"""": """"center center"""",
+  """"value"""": null,
+  """"x"""": """"10%"""",
+  """"y"""": """"30%"""",
+  """"width"""": """"80%"""",
+  """"height"""": """"10%"""",
+  """"hoverStyle"""": {""""background"""": {""""color"""": """"#EEEEEEFF""""}},
+  """"selectedStyle"""": {""""background"""": {""""color"""": """"#CCCCCCFF""""}},
+  """"action"""": {""""name"""": """"none""""},
+  """"animation"""": {""""start"""": {""""name"""": """"bounce"""", """"duration"""": 1000, """"iterationCount"""": 1, """"direction"""": """"normal""""}, """"loop"""": {""""name"""": """"none"""", """"duration"""": 0, """"direction"""": """"normal""""}},
+  """"isMovable"""": true,
+  """"isSizeable"""": true,
+  """"isDeletable"""": true,
+  """"isDuplicatable"""": true,
+  """"isEditable"""": true,
+  """"isRequired"""": false,
+  """"allowActionChange"""": true,
+  """"isHidden"""": false,
+  """"isSelectable"""": true,
+  """"isMuted"""": false,
+  """"showFeedback"""": false,
+  """"feedbackMessage"""": null,
+  """"aspectRatio"""": null,
+  """"shape"""": """"rectangle"""",
+  """"audienceId"""": null,
+  """"layer"""": 0
+}
+","3.-------   ----------------------
+3.id   -
+3.name   -
+3.type   'answer_timer_node'
+3.themePrefix   -
+3.content   -
+3.contentAlign   top left, top center, top right, top justify, center left, center center, center right, center justify, bottom left, bottom center, bottom right, bottom justify
+3.value   -
+3.x   -
+3.y   -
+3.width   -
+3.height   -
+3.hoverStyle   -
+3.selectedStyle   -
+3.action   -
+3.animation   -
+3.isMovable   -
+3.isSizeable   -
+3.isDeletable   -
+3.isDuplicatable   -
+3.isEditable   -
+3.isRequired   -
+3.allowActionChange   -
+3.isHidden   -
+3.isSelectable   -
+3.isMuted   -
+3.showFeedback   -
+3.feedbackMessage   -
+3.aspectRatio   -
+3.shape   rectangle, square, circle, ellipse
+3.audienceId   -
+3.layer   -","","",""
+"24.4 Timeout Message Node (timeout_message_node)","4","-------, id, name, type, themePrefix, content, contentAlign, value, x, y, width, height, hoverStyle, selectedStyle, action, animation, isMovable, isSizeable, isDeletable, isDuplicatable, isEditable, isRequired, allowActionChange, isHidden, isSelectable, isMuted, showFeedback, feedbackMessage, aspectRatio, shape, audienceId, layer","{
+  """"id"""": 104,
+  """"name"""": """"Timeout Message"""",
+  """"type"""": """"timeout_message_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"Time's up!"""",
+  """"contentAlign"""": """"center center"""",
+  """"value"""": null,
+  """"x"""": """"10%"""",
+  """"y"""": """"40%"""",
+  """"width"""": """"80%"""",
+  """"height"""": """"10%"""",
+  """"hoverStyle"""": {""""background"""": {""""color"""": """"#EEEEEEFF""""}},
+  """"selectedStyle"""": {""""background"""": {""""color"""": """"#CCCCCCFF""""}},
+  """"action"""": {""""name"""": """"none""""},
+  """"animation"""": {""""start"""": {""""name"""": """"bounce"""", """"duration"""": 1000, """"iterationCount"""": 1, """"direction"""": """"normal""""}, """"loop"""": {""""name"""": """"none"""", """"duration"""": 0, """"direction"""": """"normal""""}},
+  """"isMovable"""": true,
+  """"isSizeable"""": true,
+  """"isDeletable"""": true,
+  """"isDuplicatable"""": true,
+  """"isEditable"""": true,
+  """"isRequired"""": false,
+  """"allowActionChange"""": true,
+  """"isHidden"""": false,
+  """"isSelectable"""": true,
+  """"isMuted"""": false,
+  """"showFeedback"""": false,
+  """"feedbackMessage"""": null,
+  """"aspectRatio"""": null,
+  """"shape"""": """"rectangle"""",
+  """"audienceId"""": null,
+  """"layer"""": 0
+}
+","4.-------   ----------------------
+4.id   -
+4.name   -
+4.type   'timeout_message_node'
+4.themePrefix   -
+4.content   -
+4.contentAlign   top left, top center, top right, top justify, center left, center center, center right, center justify, bottom left, bottom center, bottom right, bottom justify
+4.value   -
+4.x   -
+4.y   -
+4.width   -
+4.height   -
+4.hoverStyle   -
+4.selectedStyle   -
+4.action   -
+4.animation   -
+4.isMovable   -
+4.isSizeable   -
+4.isDeletable   -
+4.isDuplicatable   -
+4.isEditable   -
+4.isRequired   -
+4.allowActionChange   -
+4.isHidden   -
+4.isSelectable   -
+4.isMuted   -
+4.showFeedback   -
+4.feedbackMessage   -
+4.aspectRatio   -
+4.shape   rectangle, square, circle, ellipse
+4.audienceId   -
+4.layer   -","","",""
+"24.5 Image Node (image_node)","5","-------, id, name, type, themePrefix, content, contentAlign, value, x, y, width, height, image, hoverStyle, selectedStyle, action, animation, isMovable, isSizeable, isDeletable, isDuplicatable, isEditable, isRequired, allowActionChange, isHidden, isSelectable, isMuted, showFeedback, feedbackMessage, aspectRatio, shape, audienceId, layer","{
+  """"id"""": 105,
+  """"name"""": """"Image"""",
+  """"type"""": """"image_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """""""",
+  """"contentAlign"""": """"center center"""",
+  """"value"""": null,
+  """"x"""": """"10%"""",
+  """"y"""": """"50%"""",
+  """"width"""": """"80%"""",
+  """"height"""": """"20%"""",
+  """"image"""": {
+    """"id"""": null,
+    """"type"""": """"image_media"""",
+    """"url"""": """"https://cdn.example.com/img.png""""
+  },
+  """"hoverStyle"""": {""""background"""": {""""color"""": """"#EEEEEEFF""""}},
+  """"selectedStyle"""": {""""background"""": {""""color"""": """"#CCCCCCFF""""}},
+  """"action"""": {""""name"""": """"none""""},
+  """"animation"""": {""""start"""": {""""name"""": """"bounce"""", """"duration"""": 1000, """"iterationCount"""": 1, """"direction"""": """"normal""""}, """"loop"""": {""""name"""": """"none"""", """"duration"""": 0, """"direction"""": """"normal""""}},
+  """"isMovable"""": true,
+  """"isSizeable"""": true,
+  """"isDeletable"""": true,
+  """"isDuplicatable"""": true,
+  """"isEditable"""": true,
+  """"isRequired"""": false,
+  """"allowActionChange"""": true,
+  """"isHidden"""": false,
+  """"isSelectable"""": true,
+  """"isMuted"""": false,
+  """"showFeedback"""": false,
+  """"feedbackMessage"""": null,
+  """"aspectRatio"""": null,
+  """"shape"""": """"rectangle"""",
+  """"audienceId"""": null,
+  """"layer"""": 0
+}
+","5.-------   ----------------------
+5.id   -
+5.name   -
+5.type   'image_node'
+5.themePrefix   -
+5.content   -
+5.contentAlign   top left, top center, top right, top justify, center left, center center, center right, center justify, bottom left, bottom center, bottom right, bottom justify
+5.value   -
+5.x   -
+5.y   -
+5.width   -
+5.height   -
+5.image   -
+5.hoverStyle   -
+5.selectedStyle   -
+5.action   -
+5.animation   -
+5.isMovable   -
+5.isSizeable   -
+5.isDeletable   -
+5.isDuplicatable   -
+5.isEditable   -
+5.isRequired   -
+5.allowActionChange   -
+5.isHidden   -
+5.isSelectable   -
+5.isMuted   -
+5.showFeedback   -
+5.feedbackMessage   -
+5.aspectRatio   -
+5.shape   rectangle, square, circle, ellipse
+5.audienceId   -
+5.layer   -","","",""
+"24.6 Yes Node (yes_node)","6","-------, id, name, type, themePrefix, content, contentAlign, value, x, y, width, height, hoverStyle, selectedStyle, action, animation, isMovable, isSizeable, isDeletable, isDuplicatable, isEditable, isRequired, allowActionChange, isHidden, isSelectable, isMuted, showFeedback, feedbackMessage, aspectRatio, shape, audienceId, layer","{
+  """"id"""": 106,
+  """"name"""": """"Yes"""",
+  """"type"""": """"yes_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"Yes"""",
+  """"contentAlign"""": """"center center"""",
+  """"value"""": null,
+  """"x"""": """"10%"""",
+  """"y"""": """"60%"""",
+  """"width"""": """"35%"""",
+  """"height"""": """"10%"""",
+  """"hoverStyle"""": {""""background"""": {""""color"""": """"#EEEEEEFF""""}},
+  """"selectedStyle"""": {""""background"""": {""""color"""": """"#CCCCCCFF""""}},
+  """"action"""": {""""name"""": """"none""""},
+  """"animation"""": {""""start"""": {""""name"""": """"bounce"""", """"duration"""": 1000, """"iterationCount"""": 1, """"direction"""": """"normal""""}, """"loop"""": {""""name"""": """"none"""", """"duration"""": 0, """"direction"""": """"normal""""}},
+  """"isMovable"""": true,
+  """"isSizeable"""": true,
+  """"isDeletable"""": true,
+  """"isDuplicatable"""": true,
+  """"isEditable"""": true,
+  """"isRequired"""": false,
+  """"allowActionChange"""": true,
+  """"isHidden"""": false,
+  """"isSelectable"""": true,
+  """"isMuted"""": false,
+  """"showFeedback"""": false,
+  """"feedbackMessage"""": null,
+  """"aspectRatio"""": null,
+  """"shape"""": """"rectangle"""",
+  """"audienceId"""": null,
+  """"layer"""": 0
+}
+","6.-------   ----------------------
+6.id   -
+6.name   -
+6.type   'yes_node'
+6.themePrefix   -
+6.content   -
+6.contentAlign   top left, top center, top right, top justify, center left, center center, center right, center justify, bottom left, bottom center, bottom right, bottom justify
+6.value   -
+6.x   -
+6.y   -
+6.width   -
+6.height   -
+6.hoverStyle   -
+6.selectedStyle   -
+6.action   -
+6.animation   -
+6.isMovable   -
+6.isSizeable   -
+6.isDeletable   -
+6.isDuplicatable   -
+6.isEditable   -
+6.isRequired   -
+6.allowActionChange   -
+6.isHidden   -
+6.isSelectable   -
+6.isMuted   -
+6.showFeedback   -
+6.feedbackMessage   -
+6.aspectRatio   -
+6.shape   rectangle, square, circle, ellipse
+6.audienceId   -
+6.layer   -","","",""
+"24.7 No Node (no_node)","7","-------, id, name, type, themePrefix, content, contentAlign, value, x, y, width, height, hoverStyle, selectedStyle, action, animation, isMovable, isSizeable, isDeletable, isDuplicatable, isEditable, isRequired, allowActionChange, isHidden, isSelectable, isMuted, showFeedback, feedbackMessage, aspectRatio, shape, audienceId, layer","{
+  """"id"""": 107,
+  """"name"""": """"No"""",
+  """"type"""": """"no_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"No"""",
+  """"contentAlign"""": """"center center"""",
+  """"value"""": null,
+  """"x"""": """"55%"""",
+  """"y"""": """"60%"""",
+  """"width"""": """"35%"""",
+  """"height"""": """"10%"""",
+  """"hoverStyle"""": {""""background"""": {""""color"""": """"#EEEEEEFF""""}},
+  """"selectedStyle"""": {""""background"""": {""""color"""": """"#CCCCCCFF""""}},
+  """"action"""": {""""name"""": """"none""""},
+  """"animation"""": {""""start"""": {""""name"""": """"bounce"""", """"duration"""": 1000, """"iterationCount"""": 1, """"direction"""": """"normal""""}, """"loop"""": {""""name"""": """"none"""", """"duration"""": 0, """"direction"""": """"normal""""}},
+  """"isMovable"""": true,
+  """"isSizeable"""": true,
+  """"isDeletable"""": true,
+  """"isDuplicatable"""": true,
+  """"isEditable"""": true,
+  """"isRequired"""": false,
+  """"allowActionChange"""": true,
+  """"isHidden"""": false,
+  """"isSelectable"""": true,
+  """"isMuted"""": false,
+  """"showFeedback"""": false,
+  """"feedbackMessage"""": null,
+  """"aspectRatio"""": null,
+  """"shape"""": """"rectangle"""",
+  """"audienceId"""": null,
+  """"layer"""": 0
+}
+","7.-------   ----------------------
+7.id   -
+7.name   -
+7.type   'no_node'
+7.themePrefix   -
+7.content   -
+7.contentAlign   top left, top center, top right, top justify, center left, center center, center right, center justify, bottom left, bottom center, bottom right, bottom justify
+7.value   -
+7.x   -
+7.y   -
+7.width   -
+7.height   -
+7.hoverStyle   -
+7.selectedStyle   -
+7.action   -
+7.animation   -
+7.isMovable   -
+7.isSizeable   -
+7.isDeletable   -
+7.isDuplicatable   -
+7.isEditable   -
+7.isRequired   -
+7.allowActionChange   -
+7.isHidden   -
+7.isSelectable   -
+7.isMuted   -
+7.showFeedback   -
+7.feedbackMessage   -
+7.aspectRatio   -
+7.shape   rectangle, square, circle, ellipse
+7.audienceId   -
+7.layer   -","","",""
+"24.8 Button Node (button_node)","8","-------, id, name, type, themePrefix, content, contentAlign, value, x, y, width, height, align, font, wordBreak, padding, tags, zIndex, background, border, opacity, hoverStyle, hoverStyle.opacity, hoverStyle.background, hoverStyle.background.color, selectedStyle, selectedStyle.opacity, selectedStyle.background, selectedStyle.background.color, action, animation, isMovable, isSizeable, isDeletable, isDuplicatable, isEditable, isRequired, allowActionChange, isHidden, isSelectable, isMuted, showFeedback, feedbackMessage, aspectRatio, shape, audienceId, layer","{
+  """"id"""": 201,
+  """"name"""": """"Button"""",
+  """"type"""": """"button_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"Click Me!"""",
+  """"contentAlign"""": """"center center"""",
+  """"value"""": null,
+  """"x"""": """"20%"""",
+  """"y"""": """"30%"""",
+  """"width"""": """"60%"""",
+  """"height"""": """"10%"""",
+  """"align"""": """"center center"""",
+  """"font"""": { """"color"""": """"#000000FF"""", """"family"""": """"Arial"""", """"size"""": 14, """"weight"""": """"bold"""", """"style"""": """"normal"""", """"textDecoration"""": """"none"""" },
+  """"wordBreak"""": """"normal"""",
+  """"padding"""": """"8px 16px"""",
+  """"tags"""": [""""cta"""", """"main""""],
+  """"zIndex"""": 1,
+  """"background"""": { """"color"""": """"#FFDD00FF"""", """"image"""": null, """"video"""": null, """"x"""": """"0"""", """"y"""": """"0"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": false },
+  """"border"""": { """"color"""": """"#000000FF"""", """"style"""": """"solid"""", """"width"""": 1, """"radius"""": 4 },
+  """"opacity"""": 1.0,
+  """"hoverStyle"""": { """"opacity"""": 0.9, """"background"""": { """"color"""": """"#FFE066FF"""" } },
+  """"selectedStyle"""": { """"opacity"""": 1.0, """"background"""": { """"color"""": """"#FFD700FF"""" } },
+  """"action"""": { """"name"""": """"jump"""", """"marker"""": { """"timelineId"""": 2, """"time"""": 10000, """"trackIndex"""": 0, """"linkedTimelineItemId"""": null }, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": null },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 500, """"iterationCount"""": 1, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"none"""", """"duration"""": 0, """"direction"""": """"normal"""" } },
+  """"isMovable"""": true,
+  """"isSizeable"""": true,
+  """"isDeletable"""": true,
+  """"isDuplicatable"""": true,
+  """"isEditable"""": true,
+  """"isRequired"""": false,
+  """"allowActionChange"""": true,
+  """"isHidden"""": false,
+  """"isSelectable"""": true,
+  """"isMuted"""": false,
+  """"showFeedback"""": false,
+  """"feedbackMessage"""": null,
+  """"aspectRatio"""": null,
+  """"shape"""": """"rectangle"""",
+  """"audienceId"""": null,
+  """"layer"""": 0
+}
+","8.-------   ----------------------
+8.id   -
+8.name   -
+8.type   'button_node'
+8.themePrefix   -
+8.content   -
+8.contentAlign   top left, top center, top right, top justify, center left, center center, center right, center justify, bottom left, bottom center, bottom right, bottom justify
+8.value   -
+8.x   -
+8.y   -
+8.width   -
+8.height   -
+8.align   top left, top center, top right, center left, center center, center right, bottom left, bottom center, bottom right
+8.font   -
+8.wordBreak   normal, break-all, keep-all, break-word, initial, inherit
+8.padding   -
+8.tags   -
+8.zIndex   -
+8.background   -
+8.border   -
+8.opacity   -
+8.hoverStyle   -
+8.hoverStyle.opacity   -
+8.hoverStyle.background   -
+8.hoverStyle.background.color   8-digit hex
+8.selectedStyle   -
+8.selectedStyle.opacity   -
+8.selectedStyle.background   -
+8.selectedStyle.background.color   8-digit hex
+8.action   -
+8.animation   -
+8.isMovable   -
+8.isSizeable   -
+8.isDeletable   -
+8.isDuplicatable   -
+8.isEditable   -
+8.isRequired   -
+8.allowActionChange   -
+8.isHidden   -
+8.isSelectable   -
+8.isMuted   -
+8.showFeedback   -
+8.feedbackMessage   -
+8.aspectRatio   -
+8.shape   rectangle, square, circle, ellipse
+8.audienceId   -
+8.layer   -","","",""
+"24.9 Submit Node (submit_node)","9","-------, id, name, type, themePrefix, content, contentAlign, value, x, y, width, height, align, font, wordBreak, padding, tags, zIndex, background, border, opacity, hoverStyle, hoverStyle.opacity, hoverStyle.background, hoverStyle.background.color, selectedStyle, selectedStyle.opacity, selectedStyle.background, selectedStyle.background.color, action, animation, isMovable, isSizeable, isDeletable, isDuplicatable, isEditable, isRequired, allowActionChange, isHidden, isSelectable, isMuted, showFeedback, feedbackMessage, aspectRatio, shape, audienceId, layer","{
+  """"id"""": 202,
+  """"name"""": """"Submit"""",
+  """"type"""": """"submit_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"Submit Answer"""",
+  """"contentAlign"""": """"center center"""",
+  """"value"""": null,
+  """"x"""": """"20%"""",
+  """"y"""": """"45%"""",
+  """"width"""": """"60%"""",
+  """"height"""": """"10%"""",
+  """"align"""": """"center center"""",
+  """"font"""": { """"color"""": """"#FFFFFF"""", """"family"""": """"Arial"""", """"size"""": 14, """"weight"""": """"bold"""", """"style"""": """"normal"""", """"textDecoration"""": """"none"""" },
+  """"wordBreak"""": """"normal"""",
+  """"padding"""": """"8px 16px"""",
+  """"tags"""": [""""submit"""", """"main""""],
+  """"zIndex"""": 2,
+  """"background"""": { """"color"""": """"#007BFF"""", """"image"""": null, """"video"""": null, """"x"""": """"0"""", """"y"""": """"0"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": false },
+  """"border"""": { """"color"""": """"#0056b3"""", """"style"""": """"solid"""", """"width"""": 1, """"radius"""": 4 },
+  """"opacity"""": 1.0,
+  """"hoverStyle"""": { """"opacity"""": 0.95, """"background"""": { """"color"""": """"#0056b3"""" } },
+  """"selectedStyle"""": { """"opacity"""": 1.0, """"background"""": { """"color"""": """"#003366"""" } },
+  """"action"""": { """"name"""": """"submit"""", """"marker"""": null, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": null },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 500, """"iterationCount"""": 1, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"none"""", """"duration"""": 0, """"direction"""": """"normal"""" } },
+  """"isMovable"""": true,
+  """"isSizeable"""": true,
+  """"isDeletable"""": true,
+  """"isDuplicatable"""": true,
+  """"isEditable"""": true,
+  """"isRequired"""": false,
+  """"allowActionChange"""": true,
+  """"isHidden"""": false,
+  """"isSelectable"""": true,
+  """"isMuted"""": false,
+  """"showFeedback"""": false,
+  """"feedbackMessage"""": null,
+  """"aspectRatio"""": null,
+  """"shape"""": """"rectangle"""",
+  """"audienceId"""": null,
+  """"layer"""": 0
+}
+","9.-------   ----------------------
+9.id   -
+9.name   -
+9.type   'submit_node'
+9.themePrefix   -
+9.content   -
+9.contentAlign   top left, top center, top right, top justify, center left, center center, center right, center justify, bottom left, bottom center, bottom right, bottom justify
+9.value   -
+9.x   -
+9.y   -
+9.width   -
+9.height   -
+9.align   top left, top center, top right, center left, center center, center right, bottom left, bottom center, bottom right
+9.font   -
+9.wordBreak   normal, break-all, keep-all, break-word, initial, inherit
+9.padding   -
+9.tags   -
+9.zIndex   -
+9.background   -
+9.border   -
+9.opacity   -
+9.hoverStyle   -
+9.hoverStyle.opacity   -
+9.hoverStyle.background   -
+9.hoverStyle.background.color   8-digit hex
+9.selectedStyle   -
+9.selectedStyle.opacity   -
+9.selectedStyle.background   -
+9.selectedStyle.background.color   8-digit hex
+9.action   -
+9.animation   -
+9.isMovable   -
+9.isSizeable   -
+9.isDeletable   -
+9.isDuplicatable   -
+9.isEditable   -
+9.isRequired   -
+9.allowActionChange   -
+9.isHidden   -
+9.isSelectable   -
+9.isMuted   -
+9.showFeedback   -
+9.feedbackMessage   -
+9.aspectRatio   -
+9.shape   rectangle, square, circle, ellipse
+9.audienceId   -
+9.layer   -","","",""
+"24.10 Option Node (option_node)","10","-------, id, name, type, themePrefix, content, contentAlign, value, x, y, width, height, align, font, wordBreak, padding, tags, zIndex, background, border, opacity, hoverStyle, hoverStyle.opacity, hoverStyle.background, hoverStyle.background.color, selectedStyle, selectedStyle.opacity, selectedStyle.background, selectedStyle.background.color, action, animation, isMovable, isSizeable, isDeletable, isDuplicatable, isEditable, isRequired, allowActionChange, isHidden, isSelectable, isMuted, showFeedback, feedbackMessage, aspectRatio, shape, audienceId, layer","{
+  """"id"""": 203,
+  """"name"""": """"Option"""",
+  """"type"""": """"option_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"Option 1"""",
+  """"contentAlign"""": """"center center"""",
+  """"value"""": null,
+  """"x"""": """"20%"""",
+  """"y"""": """"60%"""",
+  """"width"""": """"60%"""",
+  """"height"""": """"10%"""",
+  """"align"""": """"center center"""",
+  """"font"""": { """"color"""": """"#333333FF"""", """"family"""": """"Arial"""", """"size"""": 14, """"weight"""": """"normal"""", """"style"""": """"normal"""", """"textDecoration"""": """"none"""" },
+  """"wordBreak"""": """"normal"""",
+  """"padding"""": """"8px 16px"""",
+  """"tags"""": [""""option""""],
+  """"zIndex"""": 3,
+  """"background"""": { """"color"""": """"#F0F0F0"""", """"image"""": null, """"video"""": null, """"x"""": """"0"""", """"y"""": """"0"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": false },
+  """"border"""": { """"color"""": """"#CCCCCC"""", """"style"""": """"solid"""", """"width"""": 1, """"radius"""": 4 },
+  """"opacity"""": 1.0,
+  """"hoverStyle"""": { """"opacity"""": 0.95, """"background"""": { """"color"""": """"#E0E0E0"""" } },
+  """"selectedStyle"""": { """"opacity"""": 1.0, """"background"""": { """"color"""": """"#B0B0B0"""" } },
+  """"action"""": { """"name"""": """"select"""", """"marker"""": null, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": null },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 500, """"iterationCount"""": 1, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"none"""", """"duration"""": 0, """"direction"""": """"normal"""" } },
+  """"isMovable"""": true,
+  """"isSizeable"""": true,
+  """"isDeletable"""": true,
+  """"isDuplicatable"""": true,
+  """"isEditable"""": true,
+  """"isRequired"""": false,
+  """"allowActionChange"""": true,
+  """"isHidden"""": false,
+  """"isSelectable"""": true,
+  """"isMuted"""": false,
+  """"showFeedback"""": false,
+  """"feedbackMessage"""": null,
+  """"aspectRatio"""": null,
+  """"shape"""": """"rectangle"""",
+  """"audienceId"""": null,
+  """"layer"""": 0
+}
+","10.-------   ----------------------
+10.id   -
+10.name   -
+10.type   'option_node'
+10.themePrefix   -
+10.content   -
+10.contentAlign   top left, top center, top right, top justify, center left, center center, center right, center justify, bottom left, bottom center, bottom right, bottom justify
+10.value   -
+10.x   -
+10.y   -
+10.width   -
+10.height   -
+10.align   top left, top center, top right, center left, center center, center right, bottom left, bottom center, bottom right
+10.font   -
+10.wordBreak   normal, break-all, keep-all, break-word, initial, inherit
+10.padding   -
+10.tags   -
+10.zIndex   -
+10.background   -
+10.border   -
+10.opacity   -
+10.hoverStyle   -
+10.hoverStyle.opacity   -
+10.hoverStyle.background   -
+10.hoverStyle.background.color   8-digit hex
+10.selectedStyle   -
+10.selectedStyle.opacity   -
+10.selectedStyle.background   -
+10.selectedStyle.background.color   8-digit hex
+10.action   -
+10.animation   -
+10.isMovable   -
+10.isSizeable   -
+10.isDeletable   -
+10.isDuplicatable   -
+10.isEditable   -
+10.isRequired   -
+10.allowActionChange   -
+10.isHidden   -
+10.isSelectable   -
+10.isMuted   -
+10.showFeedback   -
+10.feedbackMessage   -
+10.aspectRatio   -
+10.shape   rectangle, square, circle, ellipse
+10.audienceId   -
+10.layer   -","","",""
+"24.11 Input Node (input_node)","11","-------, id, name, type, themePrefix, content, contentAlign, value, x, y, width, height, align, font, wordBreak, padding, tags, zIndex, background, border, opacity, hoverStyle, hoverStyle.opacity, hoverStyle.background, hoverStyle.background.color, selectedStyle, selectedStyle.opacity, selectedStyle.background, selectedStyle.background.color, action, animation, isMovable, isSizeable, isDeletable, isDuplicatable, isEditable, isRequired, allowActionChange, isHidden, isSelectable, isMuted, showFeedback, feedbackMessage, aspectRatio, shape, audienceId, layer, placeholderText","{
+  """"id"""": 204,
+  """"name"""": """"Input"""",
+  """"type"""": """"input_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"Enter your answer"""",
+  """"contentAlign"""": """"center center"""",
+  """"value"""": null,
+  """"x"""": """"20%"""",
+  """"y"""": """"75%"""",
+  """"width"""": """"60%"""",
+  """"height"""": """"10%"""",
+  """"align"""": """"center center"""",
+  """"font"""": { """"color"""": """"#000000FF"""", """"family"""": """"Arial"""", """"size"""": 14, """"weight"""": """"normal"""", """"style"""": """"normal"""", """"textDecoration"""": """"none"""" },
+  """"wordBreak"""": """"normal"""",
+  """"padding"""": """"8px 16px"""",
+  """"tags"""": [""""input""""],
+  """"zIndex"""": 4,
+  """"background"""": { """"color"""": """"#FFFFFF"""", """"image"""": null, """"video"""": null, """"x"""": """"0"""", """"y"""": """"0"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": false },
+  """"border"""": { """"color"""": """"#CCCCCC"""", """"style"""": """"solid"""", """"width"""": 1, """"radius"""": 4 },
+  """"opacity"""": 1.0,
+  """"hoverStyle"""": { """"opacity"""": 0.95, """"background"""": { """"color"""": """"#F0F0F0"""" } },
+  """"selectedStyle"""": { """"opacity"""": 1.0, """"background"""": { """"color"""": """"#E0E0E0"""" } },
+  """"action"""": { """"name"""": """"input"""", """"marker"""": null, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": null },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 500, """"iterationCount"""": 1, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"none"""", """"duration"""": 0, """"direction"""": """"normal"""" } },
+  """"isMovable"""": true,
+  """"isSizeable"""": true,
+  """"isDeletable"""": true,
+  """"isDuplicatable"""": true,
+  """"isEditable"""": true,
+  """"isRequired"""": false,
+  """"allowActionChange"""": true,
+  """"isHidden"""": false,
+  """"isSelectable"""": true,
+  """"isMuted"""": false,
+  """"showFeedback"""": false,
+  """"feedbackMessage"""": null,
+  """"aspectRatio"""": null,
+  """"shape"""": """"rectangle"""",
+  """"audienceId"""": null,
+  """"layer"""": 0,
+  """"placeholderText"""": """"Type here...""""
+}
+","11.-------   ----------------------
+11.id   -
+11.name   -
+11.type   'input_node'
+11.themePrefix   -
+11.content   -
+11.contentAlign   top left, top center, top right, top justify, center left, center center, center right, center justify, bottom left, bottom center, bottom right, bottom justify
+11.value   -
+11.x   -
+11.y   -
+11.width   -
+11.height   -
+11.align   top left, top center, top right, center left, center center, center right, bottom left, bottom center, bottom right
+11.font   -
+11.wordBreak   normal, break-all, keep-all, break-word, initial, inherit
+11.padding   -
+11.tags   -
+11.zIndex   -
+11.background   -
+11.border   -
+11.opacity   -
+11.hoverStyle   -
+11.hoverStyle.opacity   -
+11.hoverStyle.background   -
+11.hoverStyle.background.color   8-digit hex
+11.selectedStyle   -
+11.selectedStyle.opacity   -
+11.selectedStyle.background   -
+11.selectedStyle.background.color   8-digit hex
+11.action   -
+11.animation   -
+11.isMovable   -
+11.isSizeable   -
+11.isDeletable   -
+11.isDuplicatable   -
+11.isEditable   -
+11.isRequired   -
+11.allowActionChange   -
+11.isHidden   -
+11.isSelectable   -
+11.isMuted   -
+11.showFeedback   -
+11.feedbackMessage   -
+11.aspectRatio   -
+11.shape   rectangle, square, circle, ellipse
+11.audienceId   -
+11.layer   -
+11.placeholderText   -","","",""
+"24.12 Graph Node (graph_node)","12","-------, id, name, type, themePrefix, content, contentAlign, value, x, y, width, height, align, font, wordBreak, padding, tags, zIndex, background, border, opacity, hoverStyle, hoverStyle.opacity, hoverStyle.background, hoverStyle.background.color, selectedStyle, selectedStyle.opacity, selectedStyle.background, selectedStyle.background.color, action, animation, isMovable, isSizeable, isDeletable, isDuplicatable, isEditable, isRequired, allowActionChange, isHidden, isSelectable, isMuted, showFeedback, feedbackMessage, aspectRatio, shape, audienceId, layer, poll, quiz","{
+  """"id"""": 205,
+  """"name"""": """"Graph"""",
+  """"type"""": """"graph_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"Graph Content"""",
+  """"contentAlign"""": """"center center"""",
+  """"value"""": null,
+  """"x"""": """"10%"""",
+  """"y"""": """"10%"""",
+  """"width"""": """"80%"""",
+  """"height"""": """"30%"""",
+  """"align"""": """"center center"""",
+  """"font"""": { """"color"""": """"#000000FF"""", """"family"""": """"Arial"""", """"size"""": 14, """"weight"""": """"normal"""", """"style"""": """"normal"""", """"textDecoration"""": """"none"""" },
+  """"wordBreak"""": """"normal"""",
+  """"padding"""": """"8px 16px"""",
+  """"tags"""": [""""graph""""],
+  """"zIndex"""": 5,
+  """"background"""": { """"color"""": """"#F8F8F8"""", """"image"""": null, """"video"""": null, """"x"""": """"0"""", """"y"""": """"0"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": false },
+  """"border"""": { """"color"""": """"#CCCCCC"""", """"style"""": """"solid"""", """"width"""": 1, """"radius"""": 4 },
+  """"opacity"""": 1.0,
+  """"hoverStyle"""": { """"opacity"""": 0.95, """"background"""": { """"color"""": """"#E0E0E0"""" } },
+  """"selectedStyle"""": { """"opacity"""": 1.0, """"background"""": { """"color"""": """"#B0B0B0"""" } },
+  """"action"""": { """"name"""": """"select"""", """"marker"""": null, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": null },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 500, """"iterationCount"""": 1, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"none"""", """"duration"""": 0, """"direction"""": """"normal"""" } },
+  """"isMovable"""": true,
+  """"isSizeable"""": true,
+  """"isDeletable"""": true,
+  """"isDuplicatable"""": true,
+  """"isEditable"""": true,
+  """"isRequired"""": false,
+  """"allowActionChange"""": true,
+  """"isHidden"""": false,
+  """"isSelectable"""": true,
+  """"isMuted"""": false,
+  """"showFeedback"""": false,
+  """"feedbackMessage"""": null,
+  """"aspectRatio"""": null,
+  """"shape"""": """"rectangle"""",
+  """"audienceId"""": null,
+  """"layer"""": 0,
+  """"poll"""": { """"normal"""": {}, """"selected"""": {} },
+  """"quiz"""": { """"correct"""": {}, """"incorrect"""": {}, """"selectedCorrect"""": {}, """"selectedIncorrect"""": {} }
+}
+","12.-------   ----------------------
+12.id   -
+12.name   -
+12.type   'graph_node'
+12.themePrefix   -
+12.content   -
+12.contentAlign   top left, top center, top right, top justify, center left, center center, center right, center justify, bottom left, bottom center, bottom right, bottom justify
+12.value   -
+12.x   -
+12.y   -
+12.width   -
+12.height   -
+12.align   top left, top center, top right, center left, center center, center right, bottom left, bottom center, bottom right
+12.font   -
+12.wordBreak   normal, break-all, keep-all, break-word, initial, inherit
+12.padding   -
+12.tags   -
+12.zIndex   -
+12.background   -
+12.border   -
+12.opacity   -
+12.hoverStyle   -
+12.hoverStyle.opacity   -
+12.hoverStyle.background   -
+12.hoverStyle.background.color   8-digit hex
+12.selectedStyle   -
+12.selectedStyle.opacity   -
+12.selectedStyle.background   -
+12.selectedStyle.background.color   8-digit hex
+12.action   -
+12.animation   -
+12.isMovable   -
+12.isSizeable   -
+12.isDeletable   -
+12.isDuplicatable   -
+12.isEditable   -
+12.isRequired   -
+12.allowActionChange   -
+12.isHidden   -
+12.isSelectable   -
+12.isMuted   -
+12.showFeedback   -
+12.feedbackMessage   -
+12.aspectRatio   -
+12.shape   rectangle, square, circle, ellipse
+12.audienceId   -
+12.layer   -
+12.poll   -
+12.quiz   -","","",""
+"24.13 Rating Node (rating_node)","13","-------, id, name, type, themePrefix, content, contentAlign, value, x, y, width, height, align, font, wordBreak, padding, tags, zIndex, background, border, opacity, hoverStyle, hoverStyle.opacity, hoverStyle.background, hoverStyle.background.color, selectedStyle, selectedStyle.opacity, selectedStyle.background, selectedStyle.background.color, action, animation, isMovable, isSizeable, isDeletable, isDuplicatable, isEditable, isRequired, allowActionChange, isHidden, isSelectable, isMuted, showFeedback, feedbackMessage, aspectRatio, shape, audienceId, layer, layout, ratingItems","{
+  """"id"""": 206,
+  """"name"""": """"Rating"""",
+  """"type"""": """"rating_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"Rate this!"""",
+  """"contentAlign"""": """"center center"""",
+  """"value"""": null,
+  """"x"""": """"10%"""",
+  """"y"""": """"45%"""",
+  """"width"""": """"80%"""",
+  """"height"""": """"10%"""",
+  """"align"""": """"center center"""",
+  """"font"""": { """"color"""": """"#000000FF"""", """"family"""": """"Arial"""", """"size"""": 14, """"weight"""": """"normal"""", """"style"""": """"normal"""", """"textDecoration"""": """"none"""" },
+  """"wordBreak"""": """"normal"""",
+  """"padding"""": """"8px 16px"""",
+  """"tags"""": [""""rating""""],
+  """"zIndex"""": 6,
+  """"background"""": { """"color"""": """"#FFF8DC"""", """"image"""": null, """"video"""": null, """"x"""": """"0"""", """"y"""": """"0"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": false },
+  """"border"""": { """"color"""": """"#CCCCCC"""", """"style"""": """"solid"""", """"width"""": 1, """"radius"""": 4 },
+  """"opacity"""": 1.0,
+  """"hoverStyle"""": { """"opacity"""": 0.95, """"background"""": { """"color"""": """"#FFE4B5"""" } },
+  """"selectedStyle"""": { """"opacity"""": 1.0, """"background"""": { """"color"""": """"#FFD700"""" } },
+  """"action"""": { """"name"""": """"rate"""", """"marker"""": null, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": null },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 500, """"iterationCount"""": 1, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"none"""", """"duration"""": 0, """"direction"""": """"normal"""" } },
+  """"isMovable"""": true,
+  """"isSizeable"""": true,
+  """"isDeletable"""": true,
+  """"isDuplicatable"""": true,
+  """"isEditable"""": true,
+  """"isRequired"""": false,
+  """"allowActionChange"""": true,
+  """"isHidden"""": false,
+  """"isSelectable"""": true,
+  """"isMuted"""": false,
+  """"showFeedback"""": false,
+  """"feedbackMessage"""": null,
+  """"aspectRatio"""": null,
+  """"shape"""": """"rectangle"""",
+  """"audienceId"""": null,
+  """"layer"""": 0,
+  """"layout"""": 1,
+  """"ratingItems"""": []
+}
+","13.-------   ----------------------
+13.id   -
+13.name   -
+13.type   'rating_node'
+13.themePrefix   -
+13.content   -
+13.contentAlign   top left, top center, top right, top justify, center left, center center, center right, center justify, bottom left, bottom center, bottom right, bottom justify
+13.value   -
+13.x   -
+13.y   -
+13.width   -
+13.height   -
+13.align   top left, top center, top right, center left, center center, center right, bottom left, bottom center, bottom right
+13.font   -
+13.wordBreak   normal, break-all, keep-all, break-word, initial, inherit
+13.padding   -
+13.tags   -
+13.zIndex   -
+13.background   -
+13.border   -
+13.opacity   -
+13.hoverStyle   -
+13.hoverStyle.opacity   -
+13.hoverStyle.background   -
+13.hoverStyle.background.color   8-digit hex
+13.selectedStyle   -
+13.selectedStyle.opacity   -
+13.selectedStyle.background   -
+13.selectedStyle.background.color   8-digit hex
+13.action   -
+13.animation   -
+13.isMovable   -
+13.isSizeable   -
+13.isDeletable   -
+13.isDuplicatable   -
+13.isEditable   -
+13.isRequired   -
+13.allowActionChange   -
+13.isHidden   -
+13.isSelectable   -
+13.isMuted   -
+13.showFeedback   -
+13.feedbackMessage   -
+13.aspectRatio   -
+13.shape   rectangle, square, circle, ellipse
+13.audienceId   -
+13.layer   -
+13.layout   1 (column), 2 (row)
+13.ratingItems   -","","",""
+"24.14 Ranking Node (ranking_node)","14","-------, id, name, type, themePrefix, content, contentAlign, value, x, y, width, height, align, font, wordBreak, padding, tags, zIndex, background, border, opacity, hoverStyle, hoverStyle.opacity, hoverStyle.background, hoverStyle.background.color, selectedStyle, selectedStyle.opacity, selectedStyle.background, selectedStyle.background.color, action, animation, isMovable, isSizeable, isDeletable, isDuplicatable, isEditable, isRequired, allowActionChange, isHidden, isSelectable, isMuted, showFeedback, feedbackMessage, aspectRatio, shape, audienceId, layer, layout, rankingItems","{
+  """"id"""": 207,
+  """"name"""": """"Ranking"""",
+  """"type"""": """"ranking_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"Rank these items!"""",
+  """"contentAlign"""": """"center center"""",
+  """"value"""": null,
+  """"x"""": """"10%"""",
+  """"y"""": """"60%"""",
+  """"width"""": """"80%"""",
+  """"height"""": """"10%"""",
+  """"align"""": """"center center"""",
+  """"font"""": { """"color"""": """"#000000FF"""", """"family"""": """"Arial"""", """"size"""": 14, """"weight"""": """"normal"""", """"style"""": """"normal"""", """"textDecoration"""": """"none"""" },
+  """"wordBreak"""": """"normal"""",
+  """"padding"""": """"8px 16px"""",
+  """"tags"""": [""""ranking""""],
+  """"zIndex"""": 7,
+  """"background"""": { """"color"""": """"#F0FFF0"""", """"image"""": null, """"video"""": null, """"x"""": """"0"""", """"y"""": """"0"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": false },
+  """"border"""": { """"color"""": """"#CCCCCC"""", """"style"""": """"solid"""", """"width"""": 1, """"radius"""": 4 },
+  """"opacity"""": 1.0,
+  """"hoverStyle"""": { """"opacity"""": 0.95, """"background"""": { """"color"""": """"#E0FFE0"""" } },
+  """"selectedStyle"""": { """"opacity"""": 1.0, """"background"""": { """"color"""": """"#B0FFB0"""" } },
+  """"action"""": { """"name"""": """"rank"""", """"marker"""": null, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": null },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 500, """"iterationCount"""": 1, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"none"""", """"duration"""": 0, """"direction"""": """"normal"""" } },
+  """"isMovable"""": true,
+  """"isSizeable"""": true,
+  """"isDeletable"""": true,
+  """"isDuplicatable"""": true,
+  """"isEditable"""": true,
+  """"isRequired"""": false,
+  """"allowActionChange"""": true,
+  """"isHidden"""": false,
+  """"isSelectable"""": true,
+  """"isMuted"""": false,
+  """"showFeedback"""": false,
+  """"feedbackMessage"""": null,
+  """"aspectRatio"""": null,
+  """"shape"""": """"rectangle"""",
+  """"audienceId"""": null,
+  """"layer"""": 0,
+  """"layout"""": 1,
+  """"rankingItems"""": []
+}
+","14.-------   ----------------------
+14.id   -
+14.name   -
+14.type   'ranking_node'
+14.themePrefix   -
+14.content   -
+14.contentAlign   top left, top center, top right, top justify, center left, center center, center right, center justify, bottom left, bottom center, bottom right, bottom justify
+14.value   -
+14.x   -
+14.y   -
+14.width   -
+14.height   -
+14.align   top left, top center, top right, center left, center center, center right, bottom left, bottom center, bottom right
+14.font   -
+14.wordBreak   normal, break-all, keep-all, break-word, initial, inherit
+14.padding   -
+14.tags   -
+14.zIndex   -
+14.background   -
+14.border   -
+14.opacity   -
+14.hoverStyle   -
+14.hoverStyle.opacity   -
+14.hoverStyle.background   -
+14.hoverStyle.background.color   8-digit hex
+14.selectedStyle   -
+14.selectedStyle.opacity   -
+14.selectedStyle.background   -
+14.selectedStyle.background.color   8-digit hex
+14.action   -
+14.animation   -
+14.isMovable   -
+14.isSizeable   -
+14.isDeletable   -
+14.isDuplicatable   -
+14.isEditable   -
+14.isRequired   -
+14.allowActionChange   -
+14.isHidden   -
+14.isSelectable   -
+14.isMuted   -
+14.showFeedback   -
+14.feedbackMessage   -
+14.aspectRatio   -
+14.shape   rectangle, square, circle, ellipse
+14.audienceId   -
+14.layer   -
+14.layout   1 (column), 2 (row)
+14.rankingItems   -","","",""
+"24.15 Modal Node (modal_node)","15","-------, id, name, type, themePrefix, content, contentAlign, value, x, y, width, height, align, font, wordBreak, padding, tags, zIndex, background, border, opacity, hoverStyle, hoverStyle.opacity, hoverStyle.background, hoverStyle.background.color, selectedStyle, selectedStyle.opacity, selectedStyle.background, selectedStyle.background.color, action, animation, isMovable, isSizeable, isDeletable, isDuplicatable, isEditable, isRequired, allowActionChange, isHidden, isSelectable, isMuted, showFeedback, feedbackMessage, aspectRatio, shape, audienceId, layer","{
+  """"id"""": 208,
+  """"name"""": """"Modal"""",
+  """"type"""": """"modal_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"This is a modal dialog."""",
+  """"contentAlign"""": """"center center"""",
+  """"value"""": null,
+  """"x"""": """"30%"""",
+  """"y"""": """"30%"""",
+  """"width"""": """"40%"""",
+  """"height"""": """"20%"""",
+  """"align"""": """"center center"""",
+  """"font"""": { """"color"""": """"#000000FF"""", """"family"""": """"Arial"""", """"size"""": 14, """"weight"""": """"normal"""", """"style"""": """"normal"""", """"textDecoration"""": """"none"""" },
+  """"wordBreak"""": """"normal"""",
+  """"padding"""": """"8px 16px"""",
+  """"tags"""": [""""modal""""],
+  """"zIndex"""": 8,
+  """"background"""": { """"color"""": """"#FFFFFF"""", """"image"""": null, """"video"""": null, """"x"""": """"0"""", """"y"""": """"0"""", """"width"""": """"100%"""", """"height"""": """"100%"""", """"repeat"""": false },
+  """"border"""": { """"color"""": """"#CCCCCC"""", """"style"""": """"solid"""", """"width"""": 1, """"radius"""": 4 },
+  """"opacity"""": 1.0,
+  """"hoverStyle"""": { """"opacity"""": 0.95, """"background"""": { """"color"""": """"#F0F0F0"""" } },
+  """"selectedStyle"""": { """"opacity"""": 1.0, """"background"""": { """"color"""": """"#E0E0E0"""" } },
+  """"action"""": { """"name"""": """"open_modal"""", """"marker"""": null, """"url"""": null, """"openInNewTab"""": false, """"modalLayer"""": 1 },
+  """"animation"""": { """"start"""": { """"name"""": """"bounce"""", """"duration"""": 500, """"iterationCount"""": 1, """"direction"""": """"normal"""" }, """"loop"""": { """"name"""": """"none"""", """"duration"""": 0, """"direction"""": """"normal"""" } },
+  """"isMovable"""": true,
+  """"isSizeable"""": true,
+  """"isDeletable"""": true,
+  """"isDuplicatable"""": true,
+  """"isEditable"""": true,
+  """"isRequired"""": false,
+  """"allowActionChange"""": true,
+  """"isHidden"""": false,
+  """"isSelectable"""": true,
+  """"isMuted"""": false,
+  """"showFeedback"""": false,
+  """"feedbackMessage"""": null,
+  """"aspectRatio"""": null,
+  """"shape"""": """"rectangle"""",
+  """"audienceId"""": null,
+  """"layer"""": 0
+}
+","15.-------   ----------------------
+15.id   -
+15.name   -
+15.type   'modal_node'
+15.themePrefix   -
+15.content   -
+15.contentAlign   top left, top center, top right, top justify, center left, center center, center right, center justify, bottom left, bottom center, bottom right, bottom justify
+15.value   -
+15.x   -
+15.y   -
+15.width   -
+15.height   -
+15.align   top left, top center, top right, center left, center center, center right, bottom left, bottom center, bottom right
+15.font   -
+15.wordBreak   normal, break-all, keep-all, break-word, initial, inherit
+15.padding   -
+15.tags   -
+15.zIndex   -
+15.background   -
+15.border   -
+15.opacity   -
+15.hoverStyle   -
+15.hoverStyle.opacity   -
+15.hoverStyle.background   -
+15.hoverStyle.background.color   8-digit hex
+15.selectedStyle   -
+15.selectedStyle.opacity   -
+15.selectedStyle.background   -
+15.selectedStyle.background.color   8-digit hex
+15.action   -
+15.animation   -
+15.isMovable   -
+15.isSizeable   -
+15.isDeletable   -
+15.isDuplicatable   -
+15.isEditable   -
+15.isRequired   -
+15.allowActionChange   -
+15.isHidden   -
+15.isSelectable   -
+15.isMuted   -
+15.showFeedback   -
+15.feedbackMessage   -
+15.aspectRatio   -
+15.shape   rectangle, square, circle, ellipse
+15.audienceId   -
+15.layer   -","","",""
+"24.16 Reaction Node (reaction_node)","16","-------, id, name, type, themePrefix, content, reactions, next, flags","{
+  """"id"""": 1601,
+  """"name"""": """"Reaction Node Example"""",
+  """"type"""": """"reaction_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"How do you feel about this?"""",
+  """"reactions"""": [""""👍"""", """"👎"""", """"😐""""],
+  """"next"""": 1602,
+  """"flags"""": {
+    """"skippable"""": true
+  }
+}
+","16.-------   ----------------------
+16.id   -
+16.name   -
+16.type   'reaction_node'
+16.themePrefix   -
+16.content   -
+16.reactions   -
+16.next   -
+16.flags   -","","",""
+"24.17 Audience Select Node (audience_select_node)","17","-------, id, name, type, themePrefix, content, options, next, flags","{
+  """"id"""": 1701,
+  """"name"""": """"Audience Select Node Example"""",
+  """"type"""": """"audience_select_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"Select your group:"""",
+  """"options"""": [
+    {""""id"""": 1, """"label"""": """"Students"""", """"value"""": """"students""""},
+    {""""id"""": 2, """"label"""": """"Teachers"""", """"value"""": """"teachers""""}
+  ],
+  """"next"""": 1702,
+  """"flags"""": {
+    """"skippable"""": false
+  }
+}
+","17.-------   ----------------------
+17.id   -
+17.name   -
+17.type   'audience_select_node'
+17.themePrefix   -
+17.content   -
+17.options   -
+17.next   -
+17.flags   -","","",""
+"24.18 Wheel of Fortune Node (wheel_of_fortune_node)","18","-------, id, name, type, themePrefix, content, segments, next, flags","{
+  """"id"""": 1801,
+  """"name"""": """"Wheel of Fortune Node Example"""",
+  """"type"""": """"wheel_of_fortune_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"Spin the wheel!"""",
+  """"segments"""": [
+    {""""id"""": 1, """"label"""": """"Prize 1"""", """"value"""": """"p1""""},
+    {""""id"""": 2, """"label"""": """"Prize 2"""", """"value"""": """"p2""""}
+  ],
+  """"next"""": 1802,
+  """"flags"""": {
+    """"skippable"""": false
+  }
+}
+","18.-------   ----------------------
+18.id   -
+18.name   -
+18.type   'wheel_of_fortune_node'
+18.themePrefix   -
+18.content   -
+18.segments   -
+18.next   -
+18.flags   -","","",""
+"24.19 Breadcrumbs Node (breadcrumbs_node)","19","-------, id, name, type, themePrefix, content, breadcrumbs, next, flags","{
+  """"id"""": 1901,
+  """"name"""": """"Breadcrumbs Node Example"""",
+  """"type"""": """"breadcrumbs_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"You are here:"""",
+  """"breadcrumbs"""": [
+    {""""label"""": """"Start"""", """"nodeId"""": 100},
+    {""""label"""": """"Middle"""", """"nodeId"""": 200}
+  ],
+  """"next"""": 1902,
+  """"flags"""": {
+    """"skippable"""": true
+  }
+}
+","19.-------   ----------------------
+19.id   -
+19.name   -
+19.type   'breadcrumbs_node'
+19.themePrefix   -
+19.content   -
+19.breadcrumbs   -
+19.next   -
+19.flags   -","","",""
+"24.20 Video Node (video_node)","20","-------, id, name, type, themePrefix, content, videoUrl, next, flags","{
+  """"id"""": 2001,
+  """"name"""": """"Video Node Example"""",
+  """"type"""": """"video_node"""",
+  """"themePrefix"""": """"default"""",
+  """"content"""": """"Watch this video:"""",
+  """"videoUrl"""": """"https://example.com/video.mp4"""",
+  """"next"""": 2002,
+  """"flags"""": {
+    """"skippable"""": false
+  }
+}
+","20.-------   ----------------------
+20.id   -
+20.name   -
+20.type   'video_node'
+20.themePrefix   -
+20.content   -
+20.videoUrl   URL
+20.next   -
+20.flags   -","","",""

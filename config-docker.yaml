@@ -1,0 +1,144 @@
+network_range: 192.168.1.0/24
+ports: [554, 80, 88, 443]
+usernames: usernames.txt
+passwords: passwords.txt
+log_level: DEBUG
+
+# Configure Tor proxy
+# When enabled, all scanner network connections will be routed through Tor
+# The host should match the service name in docker-compose.yml
+tor_proxy:
+  enabled: true
+  host: tor
+  port: 9050
+
+# RTSP URL patterns to try for various camera brands
+rtsp_urls:
+  # Hikvision patterns
+  - model: Hikvision
+    pattern: "rtsp://{username}:{password}@{ip}/Streaming/Channels/101"
+  - model: Hikvision
+    pattern: "rtsp://{username}:{password}@{ip}/ISAPI/Streaming/Channels/101"
+  - model: Hikvision
+    pattern: "rtsp://{username}:{password}@{ip}/Mobile/Streaming/channels/101"
+  - model: Hikvision
+    pattern: "rtsp://{username}:{password}@{ip}/rtsp/av0_0"
+  - model: Hikvision
+    pattern: "rtsp://{username}:{password}@{ip}/mpeg4/ch01/main/av_stream"
+
+  # Dahua patterns
+  - model: Dahua
+    pattern: "rtsp://{username}:{password}@{ip}/cam/realmonitor?channel=1&subtype=0"
+  - model: Dahua
+    pattern: "rtsp://{username}:{password}@{ip}/cam/realmonitor?channel=1&subtype=1"
+  - model: Dahua
+    pattern: "rtsp://{username}:{password}@{ip}/media/video1"
+  - model: Dahua
+    pattern: "rtsp://{username}:{password}@{ip}/onvif1"
+  - model: Dahua
+    pattern: "rtsp://{username}:{password}@{ip}/onvif/live/1/1"
+
+  # Axis patterns
+  - model: Axis
+    pattern: "rtsp://{username}:{password}@{ip}/axis-media/media.amp"
+  - model: Axis
+    pattern: "rtsp://{username}:{password}@{ip}/mpeg4/media.amp"
+  - model: Axis
+    pattern: "rtsp://{username}:{password}@{ip}/h264/media.amp"
+  - model: Axis
+    pattern: "rtsp://{username}:{password}@{ip}/video.mjpg"
+  - model: Axis
+    pattern: "rtsp://{username}:{password}@{ip}/onvif-media/media.amp"
+
+  # TP-Link patterns
+  - model: TP-Link
+    pattern: "rtsp://{username}:{password}@{ip}/stream1"
+  - model: TP-Link
+    pattern: "rtsp://{username}:{password}@{ip}/stream2"
+  - model: TP-Link
+    pattern: "rtsp://{username}:{password}@{ip}/live/main"
+  - model: TP-Link
+    pattern: "rtsp://{username}:{password}@{ip}/live/sub"
+  - model: TP-Link
+    pattern: "rtsp://{username}:{password}@{ip}/av0_0"
+
+  # Amcrest
+  - model: Amcrest
+    pattern: "rtsp://{username}:{password}@{ip}/cam/realmonitor?channel=1&subtype=0"
+  - model: Amcrest
+    pattern: "rtsp://{username}:{password}@{ip}/h264/ch1/main/av_stream"
+  - model: Amcrest
+    pattern: "rtsp://{username}:{password}@{ip}/mpeg4/ch1/main/av_stream"
+  - model: Amcrest
+    pattern: "rtsp://{username}:{password}@{ip}/cam/playback?channel=1"
+  - model: Amcrest
+    pattern: "rtsp://{username}:{password}@{ip}/onvif/profile1/media.smp"
+
+  # Bosch
+  - model: Bosch
+    pattern: "rtsp://{username}:{password}@{ip}/rtsp_tunnel?h26x=4&line=1&inst=1"
+  - model: Bosch
+    pattern: "rtsp://{username}:{password}@{ip}/media/video1"
+  - model: Bosch
+    pattern: "rtsp://{username}:{password}@{ip}/rtsp_tunnel?camera=1"
+  - model: Bosch
+    pattern: "rtsp://{username}:{password}@{ip}/live.sdp"
+  - model: Bosch
+    pattern: "rtsp://{username}:{password}@{ip}/video=1"
+
+  # Sony
+  - model: Sony
+    pattern: "rtsp://{username}:{password}@{ip}/media/live/main"
+  - model: Sony
+    pattern: "rtsp://{username}:{password}@{ip}/streaming/live/1"
+  - model: Sony
+    pattern: "rtsp://{username}:{password}@{ip}/live/av0_0"
+  - model: Sony
+    pattern: "rtsp://{username}:{password}@{ip}/axis-media/media.amp"
+  - model: Sony
+    pattern: "rtsp://{username}:{password}@{ip}/onvif/profile1/media.smp"
+
+  # Vivotek
+  - model: Vivotek
+    pattern: "rtsp://{username}:{password}@{ip}/live.sdp"
+  - model: Vivotek
+    pattern: "rtsp://{username}:{password}@{ip}/media.smp"
+  - model: Vivotek
+    pattern: "rtsp://{username}:{password}@{ip}/video.mjpg"
+  - model: Vivotek
+    pattern: "rtsp://{username}:{password}@{ip}/h264/main"
+  - model: Vivotek
+    pattern: "rtsp://{username}:{password}@{ip}/mpeg4/main"
+
+  # Reolink
+  - model: Reolink
+    pattern: "rtsp://{username}:{password}@{ip}/h264Preview_01_main"
+  - model: Reolink
+    pattern: "rtsp://{username}:{password}@{ip}/h264Preview_01_sub"
+  - model: Reolink
+    pattern: "rtsp://{username}:{password}@{ip}/h264Preview_01_ext"
+  - model: Reolink
+    pattern: "rtsp://{username}:{password}@{ip}/flv?port=1935&app=bcs&stream=channel0_main.bcs"
+  - model: Reolink
+    pattern: "rtsp://{username}:{password}@{ip}/h264/ch01/main/av_stream"
+
+  # Zmodo
+  - model: Zmodo
+    pattern: "rtsp://{username}:{password}@{ip}/live/ch00_0"
+  - model: Zmodo
+    pattern: "rtsp://{username}:{password}@{ip}/ch0_0.h264"
+  - model: Zmodo
+    pattern: "rtsp://{username}:{password}@{ip}/h264/ch1/main/av_stream"
+  - model: Zmodo
+    pattern: "rtsp://{username}:{password}@{ip}/Streaming/Channels/101"
+  - model: Zmodo
+    pattern: "rtsp://{username}:{password}@{ip}/onvif/live/1/1"
+
+database:
+  type: sqlite
+  path: cameras.db
+
+performance:
+  concurrency: 15
+  timeout: 5
+scanning_interval: 60 

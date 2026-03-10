@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  tor:
+    build:
+      context: ./tor
+      dockerfile: Dockerfile
+    container_name: tor_proxy
+    restart: unless-stopped
+    ports:
+      - "9050:9050"  # SOCKS proxy port
+    networks:
+      - camera_net
+    healthcheck:
+      test: ["CMD", "grep", "-q", "Opened Socks listener on 0.0.0.0:9050", "/var/log/tor/notices.log"] 
+      interval: 5s
+      timeout: 30s
+      retries: 5
+      start_period: 15s
+
+  camera_scanner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: camera_scanner
+    depends_on:
+      tor:
+        condition: service_healthy
+    volumes:
+      - ./frames:/app/frames  # Mount frames directory to persist captured frames
+      - ./scanner.log:/app/scanner.log  # Mount log file
+      - ./cameras.db:/app/cameras.db  # Mount database
+    environment:
+      - TZ=UTC
+      - PYTHONFAULTHANDLER=1  # Enable Python fault handler for better error reporting
+      - TOR_STARTUP_DELAY=15  # Add delay to ensure Tor is fully ready
+    networks:
+      - camera_net
+    restart: on-failure:5  # Restart up to 5 times on failure
+    healthcheck:
+      test: ["CMD", "python", "-c", "import cv2; print('OpenCV is working')"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+
+networks:
+  camera_net:
+    driver: bridge 

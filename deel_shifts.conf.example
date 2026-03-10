@@ -1,0 +1,15 @@
+# Deel monthly shifts – config example
+# Copy to deel_shifts.conf and fill in values from the browser.
+#
+# How to get cookies and auth:
+# 1. Open https://app.deel.com and go to Time & Attendance for your contract.
+# 2. Open DevTools → Network, submit one shift (or any request to deelapi).
+# 3. Copy the request's Cookie header into COOKIES.
+# 4. Copy the x-auth-token header value into X_AUTH_TOKEN.
+#
+# Use single quotes so special characters in the values are preserved.
+# Cookies and tokens expire; refresh this file when requests start failing.
+
+CONTRACT_ID='3xzxe8j'
+COOKIES='auth-token=eyJ...; cf_clearance=...; __cf_bm=...'
+X_AUTH_TOKEN='eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...'

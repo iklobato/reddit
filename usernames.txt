@@ -1,0 +1,12 @@
+admin
+root
+user
+operator
+supervisor
+service
+camera
+camerauser
+installer
+security
+viewer
+guest 
