@@ -196,18 +196,32 @@ class UpfluenceClient:
         return entries, total, total_pages
 
     def reject_entry(self, list_id: str, entry_id: int, influencer_id: int) -> bool:
-        url = f"{BASE_URL}/list_entries/{entry_id}"
+        # Since list_entries API doesn't work, just blacklist the influencer
+        # The entry_id parameter is kept for compatibility but not used
+        return self._blacklist_influencer(influencer_id)
+
+    def _blacklist_influencer(self, influencer_id: int) -> bool:
+        """Export influencer to blacklist using export API"""
+        url = "https://export.upfluence.co/api/v1/export"
         body = {
-            "list_entry": {
-                "status": "rejected",
-                "list_id": list_id,
-                "influencer_id": str(influencer_id),
-            }
+            "source": {"influencer_ids": [influencer_id], "max_size": 1000},
+            "destination": {"to": "crm:blacklist"},
         }
-        resp = self.session.put(
-            url, json=body, headers=self.headers, timeout=self.default_timeout
-        )
-        return resp.status_code == 200
+        try:
+            resp = self.session.post(
+                url, json=body, headers=self.headers, timeout=self.default_timeout
+            )
+            success = resp.status_code == 200
+            if success:
+                print(f"[DEBUG] Successfully blacklisted influencer {influencer_id}")
+            else:
+                print(
+                    f"[DEBUG] Failed to blacklist influencer {influencer_id}: {resp.status_code}"
+                )
+            return success
+        except Exception as e:
+            print(f"[DEBUG] Error blacklisting influencer {influencer_id}: {e}")
+            return False
 
     def delete_entry(self, entry_id: int) -> bool:
         url = f"{BASE_URL}/list_entries/{entry_id}"
@@ -536,7 +550,11 @@ def command_remove(args) -> int:
         except requests.HTTPError as e:
             if e.response and e.response.status_code == 404:
                 print(
-                    "[ERROR] list_entries API 404. Try --from-file with exported data."
+                    "[ERROR] list_entries API endpoint not found (404).\n"
+                    "This API endpoint may have changed or the list ID may be incorrect.\n"
+                    "Try using --from-file with a CSV file containing influencer IDs.\n"
+                    "Example CSV format should have columns: list_entry_id,influencer_id\n"
+                    "Or generate a CSV using: python upfluence.py export --output influencers.csv"
                 )
                 return 1
             raise
