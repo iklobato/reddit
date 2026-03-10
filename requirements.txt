@@ -1,7 +1,0 @@
-numpy==1.26.4
-aiohttp==3.11.18
-aiosqlite==0.21.0
-opencv-python==4.9.0.80
-pyyaml==6.0.1
-aiofiles==24.1.0
-aiohttp-socks==0.10.1 
