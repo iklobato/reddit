@@ -357,13 +357,42 @@ def command_search(args) -> int:
         )
 
     output_path = Path(args.output)
-    have_header = output_path.exists() and output_path.stat().st_size
 
+    # Determine file mode and whether to write header
     seen_ids = set()
+
+    if args.append and output_path.exists() and output_path.stat().st_size > 0:
+        file_mode = "a"
+        have_header = True
+        print(f"[INFO] Appending to existing file: {output_path}")
+
+        # Read existing IDs from the file to avoid duplicates
+        try:
+            with open(output_path, "r", encoding="utf-8") as existing_file:
+                reader = csv.DictReader(existing_file)
+                if reader.fieldnames and "id" in reader.fieldnames:
+                    for row in reader:
+                        if "id" in row and row["id"]:
+                            seen_ids.add(row["id"])
+            print(
+                f"[INFO] Loaded {len(seen_ids)} existing IDs from file to avoid duplicates"
+            )
+        except Exception as e:
+            print(f"[WARN] Could not read existing file for deduplication: {e}")
+    else:
+        file_mode = "w"
+        have_header = False
+        if args.append:
+            print(
+                f"[INFO] Creating new file (or overwriting empty file): {output_path}"
+            )
+        else:
+            print(f"[INFO] Writing to file: {output_path}")
+
     page, total_pages = 1, 1
     processed = 0
 
-    with open(output_path, "a", newline="", encoding="utf-8") as f:
+    with open(output_path, file_mode, newline="", encoding="utf-8") as f:
         writer = None
         fieldnames = []
 
@@ -498,9 +527,26 @@ def command_export(args) -> int:
             row.setdefault(k, "")
 
     output_path = Path(args.output)
-    with open(output_path, "w", newline="", encoding="utf-8") as f:
+
+    # Determine file mode and whether to write header
+    if args.append and output_path.exists() and output_path.stat().st_size > 0:
+        file_mode = "a"
+        write_header = False
+        print(f"[INFO] Appending to existing file: {output_path}")
+    else:
+        file_mode = "w"
+        write_header = True
+        if args.append:
+            print(
+                f"[INFO] Creating new file (or overwriting empty file): {output_path}"
+            )
+        else:
+            print(f"[INFO] Writing to file: {output_path}")
+
+    with open(output_path, file_mode, newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=all_keys, extrasaction="ignore")
-        writer.writeheader()
+        if write_header:
+            writer.writeheader()
         writer.writerows(rows)
 
     print(f"[INFO] Exported {len(rows)} contacts to {output_path}")
@@ -690,6 +736,11 @@ def main() -> int:
         help="Output CSV file path",
     )
     search_parser.add_argument(
+        "--append",
+        action="store_true",
+        help="Append to existing output file instead of overwriting",
+    )
+    search_parser.add_argument(
         "-l", "--limit", type=int, help="Max number of influencers to process"
     )
     search_parser.add_argument(
@@ -710,6 +761,11 @@ def main() -> int:
         type=str,
         default="upfluence_contacts.csv",
         help="Output CSV file path",
+    )
+    export_parser.add_argument(
+        "--append",
+        action="store_true",
+        help="Append to existing output file instead of overwriting",
     )
     export_parser.add_argument(
         "-w", "--workers", type=int, default=64, help="Concurrent workers for unlock"
